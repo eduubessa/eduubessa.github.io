@@ -1,0 +1,173 @@
+html, body {
+    background: #0A192E;
+}
+
+#app {
+    position: relative;
+    z-index: 5;
+}
+
+.navbar {
+    padding: 22px !important;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono", monospace;
+    font-size: 14px;
+}
+
+.navbar-transparent {
+    background-color: transparent !important;
+    border: none;
+}
+
+.navbar-transparent .bg-transparent {
+    background-color: transparent !important;
+}
+
+.navbar-transparent a {
+    padding: 10px 16px !important;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.navbar-transparent a:hover {
+    color: #64ffda !important;
+}
+
+.navbar-transparent li:nth-child(5) a {
+    padding: 10px 16px !important;
+    margin-right: 22px !important;
+}
+
+.navbar-transparent a:hover span {
+    color: #fff;
+}
+
+.navbar-transparent a.nav-button {
+    padding: 8px 22px !important;
+    color: #64ffda;
+    border: 2px solid #64ffda;
+    background: transparent;
+    display: block;
+}
+
+.navbar-transparent a.nav-button:hover,
+.navbar-transparent a.nav-button:focus,
+.navbar-transparent a.nav-button:active {
+    padding: 8px 22px;
+    color: #fff !important;
+    border: 2px solid #fff;
+    background: transparent;
+    display: block;
+}
+
+.text-light-primary {
+    color: #64ffda;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono", monospace;
+}
+
+h1 {
+    color: #CCD7F5;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+h2 {
+    color: #8893AF;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+#home p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #8990a5;
+    width: 65%;
+    line-height: 35px;
+    letter-spacing: 1px;
+}
+
+.page-content {
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    height: 70vh;
+}
+
+#home .btn-home {
+    padding: 16px 32px;
+    margin: 0;
+    color: #64ffda;
+    border: 2px solid #64ffda;
+    background: transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #64ffda;
+    text-decoration: none;
+}
+
+aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+}
+
+aside a {
+    color: #CCD7F5;
+    margin: 25px 0 25px 10px;
+    position: relative;
+    bottom: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+aside a:hover {
+    color: #64ffda;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+aside div.separator {
+    margin: 0 auto;
+    position: relative;
+    left: 5px;
+    width: 1px;
+    height: 15vh;
+    background: #CCD7F5;
+}
+
+div.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+svg {
+    background: transparent;
+    height: 100vh;
+    width: 100%;
+}
+polygon {
+    fill: transparent;
+    stroke-width: .05;
+    stroke: rgba(204, 215, 245, 0.3);
+}
