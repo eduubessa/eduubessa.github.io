@@ -68,6 +68,10 @@ html, body {
     font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono", monospace;
 }
 
+#home {
+    min-height: 100vh;
+}
+
 h1 {
     color: #CCD7F5;
     font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
@@ -82,7 +86,8 @@ h2 {
     font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
-#home p {
+#home p,
+#about p {
     margin-top: 20px;
     margin-bottom: 0;
     color: #8990a5;
