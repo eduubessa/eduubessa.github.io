@@ -234,34 +234,58 @@
         </div>
     </div>
 
-    <div id="age-gate" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0d1117] transition-all duration-700 hidden">
+   <div id="age-gate" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0d1117] transition-all duration-700 hidden">
         <div class="max-w-xl w-full p-10 glass rounded-3xl text-center mx-4 border border-blue-500/20 shadow-2xl">
             <i data-lucide="shield-check" class="w-16 h-16 mx-auto text-blue-400 mb-6"></i>
             <h2 class="text-2xl font-bold text-white mb-6 font-mono" data-i18n="gate.title"></h2>
-            <button id="btn-confirm" type="button" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-xl transition-all" data-i18n="gate.confirm"></button>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="btn-confirm" type="button" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-xl transition-all font-mono text-sm" data-i18n="gate.confirm"></button>
+                <button id="btn-exit" type="button" class="bg-transparent border border-white/10 hover:bg-white/5 text-gray-400 font-bold py-4 px-10 rounded-xl transition-all font-mono text-sm" data-i18n="gate.exit">EXIT_SYSTEM</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 z-[9998] transform translate-y-40 transition-all duration-700 md:left-auto md:max-w-md">
+        <div class="glass p-6 rounded-2xl border border-blue-500/20 shadow-2xl">
+            <div class="flex items-start gap-4">
+                <i data-lucide="cookie" class="w-6 h-6 text-blue-400 shrink-0"></i>
+                <div>
+                    <p class="text-[11px] text-gray-300 font-mono leading-relaxed mb-4">
+                        SYSTEM_NOTICE: This terminal uses cookies to optimize performance. By continuing to navigate EdOS, you acknowledge and accept our data protocols.
+                    </p>
+                    <div class="flex gap-3">
+                        <button id="cookie-accept" class="text-[10px] font-mono bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 border border-blue-500/30 px-4 py-2 rounded-lg transition-all uppercase tracking-widest">Accept_All</button>
+                        <button id="cookie-settings" class="text-[10px] font-mono bg-white/5 hover:bg-white/10 text-gray-400 border border-white/10 px-4 py-2 rounded-lg transition-all uppercase tracking-widest">Settings</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="main-content" class="invisible transition-opacity duration-1000">
         <header class="fixed top-0 w-full z-50 glass py-5 px-6 md:px-20 flex justify-between items-center gap-4 border-b border-white/5">
-            <a href="#hero" class="font-mono font-bold text-blue-400 text-2xl tracking-tighter shrink-0" aria-label="Eduardo Bessa — início">EB::BESSA</a>
-            <nav class="hidden lg:flex gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-inherit" aria-label="Principal">
-                <a href="#hero" data-i18n="nav.home"></a>
-                <a href="#about" data-i18n="nav.about"></a>
-                <a href="#experience" data-i18n="nav.exp"></a>
-                <a href="#projects" data-i18n="nav.projects"></a>
-                <a href="#terminal-section" data-i18n="nav.terminal"></a>
-                <a href="#contact" data-i18n="nav.contact"></a>
+            <div class="flex-1 flex justify-start">
+                <a href="#hero" class="font-mono font-bold text-blue-400 text-2xl tracking-tighter shrink-0" aria-label="Eduardo Bessa — início">EB::BESSA</a>
+            </div>
+
+            <nav class="hidden lg:flex flex-none gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-inherit" aria-label="Principal">
+                <a href="#hero" data-i18n="nav.home" class="hover:text-blue-400 transition-colors"></a>
+                <a href="#about" data-i18n="nav.about" class="hover:text-blue-400 transition-colors"></a>
+                <a href="#experience" data-i18n="nav.exp" class="hover:text-blue-400 transition-colors"></a>
+                <a href="#projects" data-i18n="nav.projects" class="hover:text-blue-400 transition-colors"></a>
+                <a href="#terminal-section" data-i18n="nav.terminal" class="hover:text-blue-400 transition-colors"></a>
+                <a href="#contact" data-i18n="nav.contact" class="hover:text-blue-400 transition-colors"></a>
             </nav>
-            <div class="flex items-center gap-2 md:gap-3 shrink-0 ml-auto">
-                <button type="button" id="theme-toggle" class="theme-toggle-btn flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-gray-300 transition hover:bg-white/10 hover:text-white" aria-pressed="true">
-                    <i data-lucide="sun" class="theme-icon-sun h-5 w-5 hidden" aria-hidden="true"></i>
-                    <i data-lucide="moon" class="theme-icon-moon h-5 w-5" aria-hidden="true"></i>
-                </button>
+
+            <div class="flex-1 flex items-center gap-2 md:gap-3 shrink-0 justify-end">
                 <div class="lang-switcher flex rounded-full p-1 border border-white/5 font-mono text-[10px] bg-black/40" role="group" aria-label="Idioma">
                     <button type="button" class="lang-btn px-3 py-1 rounded-full" data-lang="pt">PT</button>
                     <button type="button" class="lang-btn px-3 py-1 rounded-full" data-lang="en">EN</button>
                 </div>
+                <button type="button" id="theme-toggle" class="theme-toggle-btn flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-gray-300 transition hover:bg-white/10 hover:text-white" aria-pressed="true">
+                    <i data-lucide="sun" class="theme-icon-sun h-5 w-5 hidden" aria-hidden="true"></i>
+                    <i data-lucide="moon" class="theme-icon-moon h-5 w-5" aria-hidden="true"></i>
+                </button>
             </div>
         </header>
 
