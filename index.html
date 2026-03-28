@@ -1,148 +1,1381 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-    <!-- Metas -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Links -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="all" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
-    <!-- Title -->
-    <title>::: Eduardo Bessa // Portfolio :::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eduardo Bessa — Engenheiro Full-Stack e multimédia. Portfolio EdOS: experiência, projetos e terminal interativo.">
+    <meta name="keywords" content="Eduardo Bessa, Full-Stack, Laravel, Vue, Python, Portugal, portfolio, desenvolvimento web">
+    <meta name="author" content="Eduardo Bessa">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="canonical" href="https://eduardobessa.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Eduardo Bessa | Senior Full-Stack Engineer | EdOS">
+    <meta property="og:description" content="Portfolio interativo EdOS — Full-Stack, multimédia e soluções escaláveis.">
+    <meta property="og:locale" content="pt_PT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eduardo Bessa | EdOS Portfolio">
+    <meta name="twitter:description" content="Engenheiro Full-Stack — portfolio terminal e projetos.">
+    <title>Eduardo Bessa | Senior Full-Stack Engineer | EdOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        @keyframes progress { from { width: 0%; } to { width: 100%; } }
+        :root { --accent: #58a6ff; --bg-dark: #0d1117; --bg-light: #f0f4fa; --hero-mesh-1: rgba(88, 166, 255, 0.22); --hero-mesh-2: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; transition: background-color 0.45s ease, color 0.45s ease; }
+        body.dark-mode { background-color: var(--bg-dark); color: #c9d1d9; }
+        body.light-mode { background-color: var(--bg-light); color: #334155; }
+        body.light-mode #main-content main { background: var(--bg-light); }
+        body.light-mode header { border-color: rgba(51, 65, 85, 0.12); }
+        body.light-mode header nav a { color: #475569; }
+        body.light-mode header nav a:hover { color: #0f172a; }
+        body.light-mode #about { border-top-color: rgba(51, 65, 85, 0.12) !important; }
+        body.light-mode #projects { border-top-color: rgba(51, 65, 85, 0.12) !important; }
+        body.light-mode #experience { background: rgba(226, 232, 240, 0.55) !important; }
+        body.light-mode #terminal-section { background: rgba(241, 245, 249, 0.9) !important; }
+        body.light-mode .text-white:not(.text-blue-400):not(.filter-btn.active) { color: #0f172a !important; }
+        body.light-mode .text-gray-300 { color: #475569 !important; }
+        body.light-mode .text-gray-400 { color: #64748b !important; }
+        body.light-mode .text-gray-500 { color: #64748b !important; }
+        body.light-mode .text-gray-600 { color: #64748b !important; }
+        body.light-mode #term-output { background: rgba(255, 255, 255, 0.92) !important; color: #334155 !important; border-color: rgba(51, 65, 85, 0.08); }
+        body.light-mode #term-output .text-gray-400 { color: #475569 !important; }
+        body.light-mode .bg-black\/40, body.light-mode .bg-black\/60, body.light-mode .bg-black\/80 { background-color: rgba(255, 255, 255, 0.85) !important; }
+        body.light-mode .lang-switcher { background: rgba(255, 255, 255, 0.9); border-color: rgba(51, 65, 85, 0.1); }
+        body.light-mode .theme-toggle-btn { background: rgba(255, 255, 255, 0.9); border-color: rgba(51, 65, 85, 0.12); color: #0f172a; }
+        body.light-mode .theme-toggle-btn:hover { background: rgba(241, 245, 249, 1); }
+        body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; }
+        .hero-wrap { position: relative; isolation: isolate; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+        .hero-bg-base {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 100% 70% at 50% -15%, var(--hero-mesh-1), transparent 55%),
+                radial-gradient(ellipse 60% 50% at 100% 20%, rgba(255, 255, 255, 0.06), transparent 50%),
+                radial-gradient(ellipse 50% 40% at 0% 80%, rgba(88, 166, 255, 0.12), transparent 55%),
+                linear-gradient(180deg, #0a0e14 0%, #0d1117 45%, #0d1117 100%);
+        }
+        body.light-mode .hero-bg-base {
+            background:
+                radial-gradient(ellipse 100% 75% at 50% -10%, rgba(59, 130, 246, 0.2), transparent 58%),
+                radial-gradient(ellipse 55% 45% at 95% 15%, rgba(255, 255, 255, 0.95), transparent 50%),
+                radial-gradient(ellipse 45% 35% at 5% 85%, rgba(147, 197, 253, 0.35), transparent 55%),
+                linear-gradient(180deg, #e8f0fc 0%, #f0f4fa 50%, #f4f7fb 100%);
+        }
+        @keyframes hero-orb-a {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+            33% { transform: translate(4%, -3%) scale(1.08); opacity: 0.75; }
+            66% { transform: translate(-2%, 4%) scale(0.96); opacity: 0.6; }
+        }
+        @keyframes hero-orb-b {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+            50% { transform: translate(-5%, 5%) scale(1.12); opacity: 0.65; }
+        }
+        @keyframes hero-shimmer {
+            0% { transform: translateX(-30%) rotate(8deg); opacity: 0.15; }
+            50% { opacity: 0.35; }
+            100% { transform: translateX(30%) rotate(8deg); opacity: 0.12; }
+        }
+        @keyframes hero-grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 64px 64px; }
+        }
+        .hero-orb {
+            position: absolute; border-radius: 50%; filter: blur(60px);
+            will-change: transform;
+        }
+        .hero-orb-1 {
+            width: min(85vw, 720px); height: min(85vw, 720px);
+            top: -25%; left: -15%;
+            background: radial-gradient(circle, rgba(88, 166, 255, 0.35) 0%, rgba(88, 166, 255, 0.05) 45%, transparent 70%);
+            animation: hero-orb-a 22s ease-in-out infinite;
+        }
+        .hero-orb-2 {
+            width: min(70vw, 560px); height: min(70vw, 560px);
+            bottom: -20%; right: -20%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(147, 197, 253, 0.15) 40%, transparent 68%);
+            animation: hero-orb-b 28s ease-in-out infinite;
+        }
+        body.light-mode .hero-orb-2 {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(191, 219, 254, 0.45) 45%, transparent 70%);
+        }
+        .hero-orb-3 {
+            width: 40vmax; height: 40vmax;
+            top: 35%; left: 50%; transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 65%);
+            animation: hero-orb-a 18s ease-in-out infinite reverse;
+            opacity: 0.7;
+        }
+        body.light-mode .hero-orb-3 {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+            opacity: 0.5;
+        }
+        .hero-grid-layer {
+            position: absolute; inset: -20%;
+            background-image:
+                linear-gradient(rgba(88, 166, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88, 166, 255, 0.07) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 0%, transparent 72%);
+            animation: hero-grid-move 48s linear infinite;
+            opacity: 0.85;
+        }
+        body.light-mode .hero-grid-layer {
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            opacity: 0.6;
+        }
+        .hero-shine {
+            position: absolute; inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.04) 48%, rgba(255, 255, 255, 0.09) 50%, rgba(255, 255, 255, 0.04) 52%, transparent 60%);
+            animation: hero-shimmer 14s ease-in-out infinite;
+        }
+        body.light-mode .hero-shine {
+            background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.5) 48%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.5) 52%, transparent 65%);
+            opacity: 0.4;
+        }
+        body.light-mode #hero h1 { color: #0f172a !important; }
+        body.light-mode #hero .hero-subtitle { color: #64748b !important; }
+        body.light-mode #hero .hero-accent { color: #2563eb !important; }
+        body.light-mode .bg-blue-600, body.light-mode .bg-blue-500 { color: #ffffff !important; }
+        body.light-mode .text-blue-400 { color: #2563eb !important; }
+        body.light-mode .text-blue-500 { color: #2563eb !important; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
+        #loader { position: fixed; inset: 0; z-index: 10000; background: #0d1117; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass { background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(88, 166, 255, 0.1); transition: background-color 0.4s ease, border-color 0.4s ease; }
+        body.light-mode .glass { background: rgba(255, 255, 255, 0.82) !important; border-color: rgba(100, 116, 139, 0.18) !important; }
+        body.light-mode .filter-btn:not(.active) { border-color: rgba(51, 65, 85, 0.15) !important; color: #64748b !important; }
+        body.light-mode #projects-loading { background: rgba(240, 244, 250, 0.95) !important; border-color: rgba(51, 65, 85, 0.1) !important; }
+        .project-item { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #main-content.invisible { opacity: 0; pointer-events: none; }
+        #term-suggest { max-height: 200px; }
+        #term-suggest button.active { background: rgba(88, 166, 255, 0.2); }
+        #chat-panel { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .chat-msg-user { align-self: flex-end; background: rgba(88, 166, 255, 0.15); border: 1px solid rgba(88, 166, 255, 0.25); }
+        .chat-msg-bot { align-self: flex-start; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); }
+        @keyframes chat-typing-dot { 0%, 80%, 100% { opacity: 0.3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+        .typing-dot { animation: chat-typing-dot 1.2s ease-in-out infinite; }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+        #projects-stage { min-height: 280px; }
+        #projects-loading { pointer-events: none; }
+        #projects-loading.is-active { pointer-events: auto; opacity: 1; }
+        #chat-fab { box-shadow: 0 10px 40px rgba(88, 166, 255, 0.25); }
+        .timeline-vline { background: linear-gradient(180deg, rgba(88,166,255,0.45) 0%, rgba(88,166,255,0.12) 50%, rgba(88,166,255,0.05) 100%); }
+        .timeline-card { transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease; }
+        .timeline-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(88, 166, 255, 0.15); border-color: rgba(88, 166, 255, 0.35); }
+        .timeline-card .timeline-img { transition: transform 0.6s ease, filter 0.4s ease; }
+        .timeline-card:hover .timeline-img { transform: scale(1.04); filter: grayscale(0); }
+        .timeline-node { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .timeline-item:hover .timeline-node { transform: scale(1.15); box-shadow: 0 0 20px rgba(88, 166, 255, 0.4); }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eduardo Bessa",
+        "jobTitle": "Full-Stack Engineer",
+        "url": "https://eduardobessa.dev/",
+        "email": "eduubessa@gmail.com",
+        "knowsAbout": ["Laravel", "Vue.js", "Python", "Full-Stack Development"]
+    }
+    </script>
 </head>
-<body>
-    <div id="app">
-        <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">EB</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#"><span>01.</span> Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span>02.</span> About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span>03.</span> Experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span>04.</span> Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span>05.</span> Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-button" href="#">Resume</a>
-                            </li>
+<body class="dark-mode" data-theme="dark">
+    <noscript>
+        <style>#edos-root{display:none!important}</style>
+        <div id="noscript-boot" class="fixed inset-0 z-[2147483647] bg-[#0d1117] text-[#c9d1d9] font-mono text-sm p-6 md:p-12 overflow-auto leading-relaxed">
+            <div class="max-w-2xl mx-auto border border-red-500/30 rounded-xl p-8 bg-black/40">
+                <h1 class="text-red-400 text-lg font-bold mb-2 tracking-tight">EdOS — arranque do sistema falhou</h1>
+                <p class="text-gray-500 text-xs mb-8 uppercase tracking-widest">POST diagnostics / modo sem JavaScript</p>
+                <p class="text-gray-400 mb-6">O kernel não conseguiu concluir a sequência de boot. Diagnóstico de hardware e software:</p>
+                <div class="space-y-6 text-left">
+                    <div>
+                        <h2 class="text-blue-400 text-xs uppercase tracking-[0.2em] mb-3">Hardware detectado</h2>
+                        <ul class="text-gray-400 space-y-1 text-xs border-l-2 border-blue-500/30 pl-4">
+                            <li>CPU …………………… desconhecido (runtime indisponível)</li>
+                            <li>Memória ……………… não alocada</li>
+                            <li>Armazenamento ……… não montado</li>
+                            <li>Display ……………… modo texto / HTML estático</li>
+                            <li>Rede ………………… camada de aplicação inativa</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-blue-400 text-xs uppercase tracking-[0.2em] mb-3">Software / runtime</h2>
+                        <ul class="text-gray-400 space-y-1 text-xs border-l-2 border-blue-500/30 pl-4">
+                            <li>Kernel EdOS ………… não carregado</li>
+                            <li>Motor de UI ………… inexistente (JS desativado)</li>
+                            <li>Terminal / Chat ……… indisponíveis</li>
+                            <li>i18n dinâmico ……… não aplicável</li>
                         </ul>
                     </div>
                 </div>
+                <div class="mt-10 pt-6 border-t-2 border-red-600 text-red-500 font-bold text-sm">
+                    ERRO CRÍTICO: JavaScript desativado ou bloqueado — necessário para iniciar o EdOS neste domínio.
+                </div>
+                <p class="mt-6 text-gray-600 text-xs">Ativa JavaScript no browser e recarrega a página para continuar.</p>
+            </div>
+        </div>
+    </noscript>
+
+    <div id="edos-root">
+
+    <div id="loader">
+        <div class="text-center">
+            <div class="font-mono text-blue-400 mb-4 tracking-widest text-xs uppercase">Loading_All_System_Resources...</div>
+            <div class="w-64 h-1 bg-gray-800 rounded-full overflow-hidden"><div class="h-full bg-blue-500" style="animation: progress 2s forwards;"></div></div>
+        </div>
+    </div>
+
+    <div id="age-gate" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0d1117] transition-all duration-700 hidden">
+        <div class="max-w-xl w-full p-10 glass rounded-3xl text-center mx-4 border border-blue-500/20 shadow-2xl">
+            <i data-lucide="shield-check" class="w-16 h-16 mx-auto text-blue-400 mb-6"></i>
+            <h2 class="text-2xl font-bold text-white mb-6 font-mono" data-i18n="gate.title"></h2>
+            <button id="btn-confirm" type="button" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-xl transition-all" data-i18n="gate.confirm"></button>
+        </div>
+    </div>
+
+    <div id="main-content" class="invisible transition-opacity duration-1000">
+        <header class="fixed top-0 w-full z-50 glass py-5 px-6 md:px-20 flex justify-between items-center gap-4 border-b border-white/5">
+            <a href="#hero" class="font-mono font-bold text-blue-400 text-2xl tracking-tighter shrink-0" aria-label="Eduardo Bessa — início">EB::BESSA</a>
+            <nav class="hidden lg:flex gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-inherit" aria-label="Principal">
+                <a href="#hero" data-i18n="nav.home"></a>
+                <a href="#about" data-i18n="nav.about"></a>
+                <a href="#experience" data-i18n="nav.exp"></a>
+                <a href="#projects" data-i18n="nav.projects"></a>
+                <a href="#terminal-section" data-i18n="nav.terminal"></a>
+                <a href="#contact" data-i18n="nav.contact"></a>
             </nav>
+            <div class="flex items-center gap-2 md:gap-3 shrink-0 ml-auto">
+                <button type="button" id="theme-toggle" class="theme-toggle-btn flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-gray-300 transition hover:bg-white/10 hover:text-white" aria-pressed="true">
+                    <i data-lucide="sun" class="theme-icon-sun h-5 w-5 hidden" aria-hidden="true"></i>
+                    <i data-lucide="moon" class="theme-icon-moon h-5 w-5" aria-hidden="true"></i>
+                </button>
+                <div class="lang-switcher flex rounded-full p-1 border border-white/5 font-mono text-[10px] bg-black/40" role="group" aria-label="Idioma">
+                    <button type="button" class="lang-btn px-3 py-1 rounded-full" data-lang="pt">PT</button>
+                    <button type="button" class="lang-btn px-3 py-1 rounded-full" data-lang="en">EN</button>
+                </div>
+            </div>
         </header>
 
-        <!-- Home -->
-        <section class="page" id="home">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 offset-1 pt-5 mt-5">
-                        <div class="page-content">
-                            <div class="page-title">
-                                <h5 class="text-light-primary">Hi, my name is</h5>
-                                <h1>Eduardo Bessa</h1>
-                                <h2>I build your ideas and your dreams.</h2>
-                            </div>
-                            <div class="page-container">
-                                <p>
-                                    I’m a full-stack web engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently,
-                                    I’m focused on building accessible, human-centered products at <a href="#">Upstatement</a>.
-                                </p>
-                                <button class="btn btn-home mt-5">More about me</button>
-                            </div>
-                        </div>
-                    </div>
+        <main>
+            <section id="hero" class="hero-wrap relative min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden" aria-labelledby="hero-title">
+                <div class="hero-bg" aria-hidden="true">
+                    <div class="hero-bg-base"></div>
+                    <div class="hero-orb hero-orb-1"></div>
+                    <div class="hero-orb hero-orb-2"></div>
+                    <div class="hero-orb hero-orb-3"></div>
+                    <div class="hero-grid-layer"></div>
+                    <div class="hero-shine"></div>
                 </div>
-            </div>
-        </section>
-        <!-- Home -->
-
-        <!-- About -->
-        <section class="page" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 offset-1">
-                        <div class="page-content">
-                            <div class="page-title">
-                                <h5 class="text-light-primary">About me</h5>
-                                <h1>Who am I?</h1>
-                            </div>
-                            <div class="page-container mt-5">
-                                <p>
-                                    Since beginning my journey as a full-stack developer nearly 4 years ago.
-                                    I'm working remote to enterprise projects, and I'm working on others projects as freelancer.
-                                </p>
-                                <p>
-                                    I'm a self-taught developer, and I'm always looking for new challenges to learn and grow,
-                                    and I'm always looking for new projects to work with.
-                                </p>
-                                <p>
-                                    My experience is in the field of web development with PHP, Laravel, JavaScript, NodeJS, Python, HTML, CSS, Wordpress, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="relative z-10 reveal max-w-6xl">
+                    <h1 id="hero-title" class="text-7xl md:text-9xl font-bold text-white mb-6 tracking-tighter drop-shadow-sm">Eduardo Bessa<span class="hero-accent text-blue-500">.</span></h1>
+                    <p class="hero-subtitle text-2xl md:text-5xl font-medium text-gray-500" data-i18n="hero.subtitle"></p>
                 </div>
-            </div>
-        </section>
-        <!-- About -->
-
-        <!-- Aside -->
-        <aside class="aside">
-            <section class="social-networks">
-                <a href="#" class="social-network-item">
-                    <i class="ri-github-line"></i>
-                </a>
-                <a href="#" class="social-network-item">
-                    <i class="ri-facebook-line"></i>
-                </a>
-                <a href="#" class="social-network-item">
-                    <i class="ri-linkedin-line"></i>
-                </a>
-                <a href="#" class="social-network-item">
-                    <i class="ri-twitter-line"></i>
-                </a>
-                <a href="#" class="social-network-item">
-                    <i class="ri-codepen-line"></i>
-                </a>
-                <div class="separator"></div>
             </section>
-        </aside>
-        <!-- Aside -->
+
+            <section id="about" class="py-40 px-6 md:px-20 border-t border-white/5">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-16 flex items-center gap-6 reveal">
+                        <span class="text-blue-500 font-mono text-xl">01.</span> <span data-i18n="nav.about"></span>
+                    </h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                        <div class="reveal">
+                            <p class="text-xl text-gray-300 leading-relaxed mb-8" data-i18n="about.text1"></p>
+                            <p class="text-gray-400 leading-relaxed mb-10" data-i18n="about.text2"></p>
+                        </div>
+                        <div class="reveal glass p-8 rounded-3xl border border-blue-500/10 font-mono text-xs">
+                            <h3 class="text-blue-400 uppercase tracking-[0.3em] mb-6">System_Specs</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3 text-gray-300"><i data-lucide="code-2" class="w-4 h-4 text-blue-500" aria-hidden="true"></i> Full-Stack Engineering</li>
+                                <li class="flex items-center gap-3 text-gray-300"><i data-lucide="camera" class="w-4 h-4 text-blue-500" aria-hidden="true"></i> Multimedia & Design</li>
+                                <li class="flex items-center gap-3 text-gray-300"><i data-lucide="database" class="w-4 h-4 text-blue-500" aria-hidden="true"></i> Data Automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-40 px-6 md:px-20 bg-[#0a0d12]/40">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-16 md:mb-24 flex items-center gap-6 reveal">
+                        <span class="text-blue-500 font-mono text-xl">02.</span> <span data-i18n="nav.exp"></span>
+                    </h2>
+                    <div class="relative">
+                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px timeline-vline -translate-x-1/2 pointer-events-none z-0" aria-hidden="true"></div>
+                        <div id="timeline-content" class="relative z-[1]"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-40 px-6 md:px-20 border-t border-white/5">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-6 reveal">
+                        <span class="text-blue-500 font-mono text-xl">03.</span> <span data-i18n="nav.projects"></span>
+                    </h2>
+
+                    <div class="flex flex-wrap gap-4 mb-12 font-mono text-[10px] reveal" role="tablist">
+                        <button type="button" class="filter-btn active px-6 py-2 border border-white/10 rounded-full transition-all" data-filter="all">ALL_FILES</button>
+                        <button type="button" class="filter-btn px-6 py-2 border border-white/10 rounded-full transition-all" data-filter="dev">DEVELOPMENT</button>
+                        <button type="button" class="filter-btn px-6 py-2 border border-white/10 rounded-full transition-all" data-filter="design">DESIGN</button>
+                        <button type="button" class="filter-btn px-6 py-2 border border-white/10 rounded-full transition-all" data-filter="photo">PHOTOGRAPHY</button>
+                    </div>
+
+                    <div id="projects-stage" class="relative reveal">
+                        <div id="projects-loading" class="absolute inset-0 z-20 flex flex-col items-center justify-center rounded-2xl bg-[#0d1117]/92 backdrop-blur-sm border border-white/5 opacity-0 transition-opacity duration-300" aria-hidden="true" aria-busy="false">
+                            <div class="text-center px-6">
+                                <div class="font-mono text-blue-400 mb-3 tracking-widest text-[10px] uppercase" data-i18n="projects.loadingLabel"></div>
+                                <div class="w-48 h-1 bg-gray-800 rounded-full overflow-hidden mx-auto">
+                                    <div id="projects-loading-bar" class="h-full bg-blue-500 w-0 transition-[width] duration-700 ease-out"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                        <div id="pagination" class="flex justify-center gap-4 mt-16 font-mono"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="terminal-section" class="py-40 px-6 md:px-20 bg-black/20">
+                <div class="max-w-5xl mx-auto reveal">
+                    <h2 class="text-3xl font-bold text-white mb-16 flex items-center gap-6">
+                        <span class="text-blue-500 font-mono text-xl">04.</span> <span data-i18n="nav.terminal"></span>
+                    </h2>
+                    <div class="w-full glass rounded-2xl border border-white/10 overflow-hidden shadow-2xl font-mono relative">
+                        <div class="bg-white/5 p-4 flex gap-2 border-b border-white/5" aria-hidden="true">
+                            <div class="w-3 h-3 rounded-full bg-red-500/40"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/40"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/40"></div>
+                        </div>
+                        <div id="term-output" class="h-[400px] overflow-y-auto p-8 text-[12px] leading-relaxed bg-black/60 text-gray-300 custom-scrollbar" role="log" aria-live="polite"></div>
+                        <div class="relative border-t border-white/5">
+                            <div id="term-suggest" class="hidden absolute bottom-full left-0 right-0 mx-4 mb-1 glass rounded-lg border border-white/10 overflow-y-auto custom-scrollbar z-10 text-left"></div>
+                            <div class="p-4 bg-black/80 flex gap-3 items-center">
+                                <span id="term-prompt-label" class="text-green-500 font-bold text-xs shrink-0">guest@edos:~$</span>
+                                <input type="text" id="term-input" class="w-full bg-transparent outline-none text-white text-xs min-w-0" spellcheck="false" autocomplete="off" aria-label="Terminal" autocapitalize="off" autocorrect="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-40 px-6 md:px-20">
+                <div class="max-w-4xl mx-auto glass p-20 rounded-[3rem] text-center reveal border-dashed border-2 border-white/5">
+                    <div id="vault-locked">
+                        <i data-lucide="lock" class="w-12 h-12 mx-auto text-blue-500 mb-6 animate-pulse" aria-hidden="true"></i>
+                        <h3 class="text-white font-bold text-3xl mb-3 font-mono" data-i18n="vault.title"></h3>
+                        <p class="text-blue-400 font-mono text-xs uppercase tracking-[0.25em] mb-2" data-i18n="vault.challenge"></p>
+                        <p class="text-gray-400 text-sm mb-2 max-w-lg mx-auto" data-i18n="vault.sub"></p>
+                        <p id="vault-date" class="text-gray-500 text-xs font-mono mb-6"></p>
+                        <p class="text-gray-600 text-[11px] mb-6 max-w-md mx-auto leading-relaxed" data-i18n="vault.hint"></p>
+                        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto items-stretch sm:items-center">
+                            <label for="input-pass" class="sr-only" data-i18n="vault.inputLabel"></label>
+                            <input type="text" id="input-pass" maxlength="12" inputmode="text" autocapitalize="characters" spellcheck="false" autocomplete="off" data-i18n-placeholder="vault.placeholder" class="w-full bg-black/40 border border-gray-800 p-4 rounded-xl text-white text-center outline-none font-mono text-sm tracking-[0.2em] uppercase transition-colors">
+                            <button type="button" id="btn-unlock" class="bg-blue-600 px-8 py-4 rounded-xl hover:bg-blue-500 text-white shrink-0" data-i18n-aria="vault.unlockAria"><i data-lucide="key" class="w-5 h-5 mx-auto"></i></button>
+                        </div>
+                        <p id="vault-error" class="hidden text-red-400 text-sm mt-4 font-mono" role="alert"></p>
+                    </div>
+                    <div id="vault-unlocked" class="hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left max-w-md mx-auto text-white">
+                            <div><span class="text-blue-400 font-mono text-[10px] block">EMAIL</span>eduubessa@gmail.com</div>
+                            <div><span class="text-blue-400 font-mono text-[10px] block">PHONE</span>+351 913 946 525</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <div class="bg">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100%" height="100%">
-            <defs>
-                <pattern id="hexagons" width="50" height="43.4"
-                         patternUnits="userSpaceOnUse"
-                         patternTransform="scale(2) translate(2) rotate(45)">
-                    <polygon
-                            points="24.8,22 37.3,29.2 37.3,43.7 24.8,50.9 12.3,43.7 12.3,29.2"
-                            id="hex" />
-                    <use xlink:href="#hex" x="25" />
-                    <use xlink:href="#hex" x="-25" />
-                    <use xlink:href="#hex" x="12.5" y="-21.7" />
-                    <use xlink:href="#hex" x="-12.5" y="-21.7" />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#hexagons)" />
-        </svg>
+    <button type="button" id="chat-fab" class="hidden fixed z-[10000] bottom-6 right-6 md:bottom-8 md:right-8 w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center border border-blue-400/30 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0d1117]" aria-haspopup="dialog" aria-expanded="false" aria-controls="chat-panel" data-i18n-aria="chat.fabLabel">
+        <i data-lucide="message-circle" class="w-7 h-7" aria-hidden="true"></i>
+    </button>
+
+    <div id="chat-backdrop" class="fixed inset-0 z-[10001] bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" aria-hidden="true"></div>
+    <div id="chat-panel" class="fixed z-[10002] bottom-6 right-6 w-[min(100%-2rem,400px)] max-h-[min(85vh,560px)] flex flex-col glass rounded-2xl border border-blue-500/20 hidden font-mono text-xs scale-95 opacity-0 transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+        <div class="flex items-center justify-between p-4 border-b border-white/10 bg-black/40 rounded-t-2xl">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <h2 id="chat-title" class="text-white font-bold text-sm" data-i18n="chat.title"></h2>
+            </div>
+            <button type="button" id="chat-close" class="text-gray-400 hover:text-white p-1 rounded" aria-label="Fechar chat"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3 min-h-[200px] max-h-[360px] custom-scrollbar text-[11px] leading-relaxed"></div>
+        <div id="chat-typing" class="hidden px-4 pb-2 text-gray-500 flex items-center gap-1">
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+            <span class="typing-dot inline-block w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+        </div>
+        <div class="p-3 border-t border-white/10 bg-black/50 rounded-b-2xl">
+            <label for="chat-input" class="sr-only" data-i18n="chat.inputLabel"></label>
+            <input type="text" id="chat-input" class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-white outline-none focus:border-blue-500/50" data-i18n-placeholder="chat.placeholder" autocomplete="off">
+        </div>
     </div>
+
+    </div>
+
+    <script>
+        const DATA = {
+            experiences: [
+                {
+                    year: "2025",
+                    company: "MUBE",
+                    loc: "Évora, PT",
+                    role: "Senior Full-Stack Engineer",
+                    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400",
+                    pt: "Liderança técnica no desenvolvimento de plataformas de streaming de alta disponibilidade e integração de fluxos FFMPEG.",
+                    en: "Technical leadership in developing high-availability streaming platforms and FFMPEG workflow integration."
+                },
+                {
+                    year: "2023",
+                    company: "Generis",
+                    loc: "Lisboa, PT",
+                    role: "Software Developer",
+                    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400",
+                    pt: "Refactoring estrutural de sistemas legados e implementação de protocolos de segurança para a indústria farmacêutica.",
+                    en: "Structural refactoring of legacy systems and implementation of security protocols for the pharmaceutical industry."
+                },
+                {
+                    year: "2021",
+                    company: "CCDR-LVT",
+                    loc: "Lisboa, PT",
+                    role: "Full-Stack Developer",
+                    img: "https://images.unsplash.com/photo-1454165833767-027ffea9e78b?q=80&w=400",
+                    pt: "Desenvolvimento de ferramentas internas de gestão de território e modernização de interfaces governamentais.",
+                    en: "Development of internal territory management tools and modernization of government interfaces."
+                },
+                {
+                    year: "2020",
+                    company: "Urbiwise",
+                    loc: "Remote, PT",
+                    role: "Backend Specialist",
+                    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400",
+                    pt: "Arquitetura de scrapers massivos para extração de dados imobiliários e otimização de consultas SQL complexas.",
+                    en: "Architecture of massive scrapers for real estate data extraction and optimization of complex SQL queries."
+                },
+                {
+                    year: "2019",
+                    company: "Freelance",
+                    loc: "Portugal",
+                    role: "Multimedia Developer",
+                    img: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=400",
+                    pt: "Criação de soluções interativas personalizadas e integração de componentes áudio/vídeo em aplicações web.",
+                    en: "Creation of custom interactive solutions and integration of audio/video components into web applications."
+                }
+            ],
+            projects: [
+                { title: "Streaming Platform", cat: "dev", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400" },
+                { title: "Brand Identity v2", cat: "design", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400" },
+                { title: "Night Urban Series", cat: "photo", img: "https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=400" },
+                { title: "Laravel API Core", cat: "dev", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=400" },
+                { title: "UI Dashboard Kit", cat: "design", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=400" },
+                { title: "Architecture Study", cat: "photo", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400" },
+                { title: "Automation Bot", cat: "dev", img: "https://images.unsplash.com/photo-1518433278983-3463b168e731?q=80&w=400" },
+                { title: "Magazine Layout", cat: "design", img: "https://images.unsplash.com/photo-1544476915-ed1370594142?q=80&w=400" }
+            ],
+            translations: {
+                pt: {
+                    gate: { title: "CONTROLO DE ACESSO", confirm: "Confirmar Acesso" },
+                    theme: { useLight: "Ativar tema claro", useDark: "Ativar tema escuro" },
+                    nav: { home: "Início", about: "Perfil", exp: "Timeline", projects: "Projetos", terminal: "Terminal", contact: "Contacto" },
+                    hero: { subtitle: "Multimedia & Full-Stack Engineer" },
+                    about: { text1: "Arquiteto de soluções digitais focado em ecossistemas escaláveis.", text2: "Especialista em Laravel, Vue e Python." },
+                    terminal: {
+                        welcome: "EdOS Kernel 6.2.0-v7+\nPronto para comandos. Escreve / para comandos ou help.",
+                        prompt: "guest@edos:~$",
+                        unknown: "Comando desconhecido: ",
+                        helpHeader: "Comandos disponíveis:",
+                        chatOpened: "Chat em tempo real ativo. Usa /chat ou /talk para voltar a abrir.",
+                        ipconfigHdr: "Configuração IP do browser (dados reais quando disponíveis):"
+                    },
+                    projects: { loadingLabel: "A_Carregar_Projetos..." },
+                    vault: {
+                        title: "VAULT_LOCKED",
+                        challenge: "Desafio diário",
+                        sub: "Introduz o código de hoje (letras e números) para acederes aos contactos.",
+                        hint: "O código é gerado de forma única por dia e renova à meia-noite, hora do teu dispositivo. Obtém o código do dia nas tuas redes ou pelo teu canal privado.",
+                        placeholder: "CÓDIGO",
+                        inputLabel: "Código do desafio diário",
+                        unlockAria: "Validar código e desbloquear",
+                        wrong: "Código inválido. Verifica o desafio de hoje."
+                    },
+                    chat: {
+                        title: "EdOS · Chat",
+                        fabLabel: "Abrir assistente do visitante",
+                        placeholder: "Mensagem…",
+                        inputLabel: "Mensagem no chat",
+                        welcome: "Olá! Sou o assistente EdOS. Em que posso ajudar?",
+                        replies: [
+                            "Percebo. O Eduardo trabalha sobretudo com Laravel, Vue e Python.",
+                            "Boa pergunta — podes usar o terminal com / para ver todos os comandos.",
+                            "O portfolio inclui timeline de experiência e grelha de projetos.",
+                            "Para contacto direto, resolve o desafio diário do vault na secção de contacto.",
+                            "Estou aqui em modo demo com respostas rápidas. Obrigado por testares o EdOS!"
+                        ]
+                    }
+                },
+                en: {
+                    gate: { title: "ACCESS CONTROL", confirm: "Confirm Access" },
+                    theme: { useLight: "Switch to light theme", useDark: "Switch to dark theme" },
+                    nav: { home: "Home", about: "Profile", exp: "Timeline", projects: "Projects", terminal: "Terminal", contact: "Contact" },
+                    hero: { subtitle: "Multimedia & Full-Stack Engineer" },
+                    about: { text1: "Digital solutions architect focused on scalable ecosystems.", text2: "Specialist in Laravel, Vue and Python." },
+                    terminal: {
+                        welcome: "EdOS Kernel 6.2.0-v7+\nReady for commands. Type / for commands or help.",
+                        prompt: "guest@edos:~$",
+                        unknown: "Unknown command: ",
+                        helpHeader: "Available commands:",
+                        chatOpened: "Realtime chat open. Use /chat or /talk to open again.",
+                        ipconfigHdr: "Browser network info (real data when available):"
+                    },
+                    projects: { loadingLabel: "Loading_Projects..." },
+                    vault: {
+                        title: "VAULT_LOCKED",
+                        challenge: "Daily challenge",
+                        sub: "Enter today's code (letters and numbers) to access contact details.",
+                        hint: "The code is unique per day and resets at midnight on your device. Get today's code from my social posts or private channel.",
+                        placeholder: "CODE",
+                        inputLabel: "Daily challenge code",
+                        unlockAria: "Validate code and unlock",
+                        wrong: "Invalid code. Check today's challenge."
+                    },
+                    chat: {
+                        title: "EdOS · Chat",
+                        fabLabel: "Open visitor assistant",
+                        placeholder: "Message…",
+                        inputLabel: "Chat message",
+                        welcome: "Hi! I'm the EdOS assistant. How can I help?",
+                        replies: [
+                            "Got it. Eduardo mainly works with Laravel, Vue, and Python.",
+                            "Good question — type / in the terminal to list all commands.",
+                            "The portfolio includes an experience timeline and a project grid.",
+                            "For direct contact, complete the daily vault challenge in the contact section.",
+                            "I'm running in demo mode with quick replies. Thanks for trying EdOS!"
+                        ]
+                    }
+                }
+            }
+        };
+
+        /**
+         * Personaliza este segredo: o código diário = f(data local + VAULT_SECRET).
+         * Quem tiver o ficheiro pode recalcular; usa isto como “cadeado social”, não segurança forte.
+         */
+        const VAULT_SECRET = 'EdOS-EB-2026-altera-isto';
+
+        function getLocalDateKey() {
+            const d = new Date();
+            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+
+        function vaultHashFallbackBytes(str, len) {
+            const out = new Uint8Array(len);
+            let seed = 2166136261;
+            for (let i = 0; i < str.length; i++) {
+                seed ^= str.charCodeAt(i);
+                seed = Math.imul(seed, 16777619) >>> 0;
+            }
+            for (let i = 0; i < len; i++) {
+                seed = (Math.imul(seed, 1103515245) + 12345) >>> 0;
+                out[i] = seed & 255;
+            }
+            return out;
+        }
+
+        async function getDailyVaultCode() {
+            const dateKey = getLocalDateKey();
+            const payload = 'EdOS-vault|' + dateKey + '|' + VAULT_SECRET;
+            let bytes;
+            if (window.crypto?.subtle) {
+                const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(payload));
+                bytes = new Uint8Array(buf);
+            } else {
+                bytes = vaultHashFallbackBytes(payload, 32);
+            }
+            const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = '';
+            for (let i = 0; i < 8; i++) code += alphabet[bytes[i] % alphabet.length];
+            return code;
+        }
+
+        window.getDailyVaultCode = getDailyVaultCode;
+
+        const CHAT_FAQ = [
+            { keys: ['olá', 'ola', 'hi', 'hello', 'hey', 'bom dia', 'boa tarde', 'boa noite', 'good morning'], replyPt: 'Olá! Bem-vindo ao portfolio do Eduardo. Pergunta sobre projetos, skills ou como contactar.', replyEn: "Hi! Welcome to Eduardo's portfolio. Ask about projects, skills, or how to get in touch." },
+            { keys: ['portfolio', 'site', 'website', 'página', 'pagina'], replyPt: 'Este site é o EdOS: timeline, projetos filtráveis, terminal e vault de contacto.', replyEn: 'This is EdOS: timeline, filterable projects, a terminal, and a contact vault.' },
+            { keys: ['projeto', 'projetos', 'project', 'projects', 'trabalho', 'work'], replyPt: 'Na secção Projetos encontras dev, design e fotografia. Usa os filtros ALL / DEVELOPMENT / DESIGN / PHOTOGRAPHY.', replyEn: 'The Projects section lists dev, design, and photography. Use ALL / DEVELOPMENT / DESIGN / PHOTOGRAPHY filters.' },
+            { keys: ['skill', 'skills', 'stack', 'tecnologia', 'laravel', 'vue', 'python'], replyPt: 'Stack principal: Laravel, Vue, Python, APIs, FFmpeg e automação de dados.', replyEn: 'Main stack: Laravel, Vue, Python, APIs, FFmpeg, and data automation.' },
+            { keys: ['contacto', 'contato', 'email', 'telefone', 'phone', 'contratar', 'hire', 'job'], replyPt: 'Contacto está na secção final: usa o código diário do vault (desafio que muda à meia-noite).', replyEn: 'Contact is at the bottom: use the daily vault code (it resets at midnight local time).' },
+            { keys: ['obrigado', 'thanks', 'thank you', 'valeu'], replyPt: 'Disponha! Se precisares de mais alguma coisa, escreve aqui.', replyEn: "You're welcome! Message again anytime." },
+            { keys: ['terminal', 'comando', 'command', 'slash'], replyPt: 'No terminal podes usar help ou / para ver comandos; /chat abre este assistente.', replyEn: 'In the terminal, use help or / for commands; /chat opens this assistant.' },
+            { keys: ['quem', 'who', 'eduardo', 'bessa', 'about'], replyPt: 'O Eduardo é engenheiro full-stack e multimédia, focado em soluções escaláveis.', replyEn: 'Eduardo is a full-stack and multimedia engineer focused on scalable solutions.' }
+        ];
+
+        const SLASH_COMMANDS = [
+            { cmd: '/help', descPt: 'Ajuda', descEn: 'Help' },
+            { cmd: '/chat', descPt: 'Abrir chat em tempo real', descEn: 'Open realtime chat' },
+            { cmd: '/talk', descPt: 'Abrir chat (alias)', descEn: 'Open chat (alias)' },
+            { cmd: '/clear', descPt: 'Limpar terminal', descEn: 'Clear terminal' },
+            { cmd: '/ipconfig', descPt: 'Info de rede (browser)', descEn: 'Network info (browser)' },
+            { cmd: '/about', descPt: 'Sobre o sistema', descEn: 'About system' },
+            { cmd: '/skills', descPt: 'Competências', descEn: 'Skills' },
+            { cmd: '/exp', descPt: 'Experiência', descEn: 'Experience' }
+        ];
+
+        class EdOSEngine {
+            constructor() {
+                this.lang = 'pt';
+                this.currentFilter = 'all';
+                this.currentPage = 1;
+                this.projectsPerPage = 6;
+                this.termHistory = [];
+                this.historyIndex = -1;
+                this.suggestIndex = 0;
+                this.chatReplyIndex = 0;
+                this.chatMessages = [];
+                this.theme = localStorage.getItem('edos_theme') || 'dark';
+                this.init();
+            }
+
+            t(path) {
+                const parts = path.split('.');
+                let o = DATA.translations[this.lang];
+                for (const p of parts) o = o?.[p];
+                return o ?? '';
+            }
+
+            init() {
+                this.setupLoader();
+                this.bindEvents();
+                this.installDevToolsGuards();
+                this.applyTheme();
+                this.updateUI();
+                lucide.createIcons();
+            }
+
+            applyTheme() {
+                const dark = this.theme === 'dark';
+                document.body.classList.toggle('dark-mode', dark);
+                document.body.classList.toggle('light-mode', !dark);
+                document.body.dataset.theme = dark ? 'dark' : 'light';
+                document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0d1117' : '#f0f4fa');
+                const btn = document.getElementById('theme-toggle');
+                if (btn) {
+                    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+                    btn.setAttribute('aria-label', dark ? this.t('theme.useLight') : this.t('theme.useDark'));
+                }
+                document.querySelector('.theme-icon-moon')?.classList.toggle('hidden', dark);
+                document.querySelector('.theme-icon-sun')?.classList.toggle('hidden', !dark);
+                lucide.createIcons();
+            }
+
+            setupLoader() {
+                setTimeout(() => {
+                    const loader = document.getElementById('loader');
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        this.checkGate();
+                    }, 600);
+                }, 1500);
+            }
+
+            checkGate() {
+                if (localStorage.getItem('gate_passed')) this.unlockSite();
+                else document.getElementById('age-gate').classList.remove('hidden');
+            }
+
+            unlockSite() {
+                document.getElementById('age-gate').style.display = 'none';
+                document.getElementById('main-content').classList.remove('invisible');
+                document.body.style.overflowY = 'auto';
+                this.initReveal();
+                this.printTerminal(DATA.translations[this.lang].terminal.welcome, 'text-green-500');
+                const fab = document.getElementById('chat-fab');
+                if (fab) fab.classList.remove('hidden');
+                lucide.createIcons();
+                const ti = document.getElementById('term-input');
+                if (ti) ti.focus();
+                this.refreshVaultUi();
+            }
+
+            refreshVaultUi() {
+                const dateKey = getLocalDateKey();
+                const locked = document.getElementById('vault-locked');
+                const unlocked = document.getElementById('vault-unlocked');
+                const err = document.getElementById('vault-error');
+                const dateEl = document.getElementById('vault-date');
+                if (dateEl) {
+                    const d = new Date();
+                    const loc = this.lang === 'pt' ? 'pt-PT' : 'en-GB';
+                    dateEl.textContent = d.toLocaleDateString(loc, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+                }
+                const sessKey = 'vault_ok_' + dateKey;
+                if (localStorage.getItem(sessKey) === '1') {
+                    locked?.classList.add('hidden');
+                    unlocked?.classList.remove('hidden');
+                    err?.classList.add('hidden');
+                } else {
+                    locked?.classList.remove('hidden');
+                    unlocked?.classList.add('hidden');
+                }
+                lucide.createIcons();
+            }
+
+            async tryUnlockVault() {
+                const input = document.getElementById('input-pass');
+                const err = document.getElementById('vault-error');
+                const val = (input?.value || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+                const code = await getDailyVaultCode();
+                if (val === code) {
+                    localStorage.setItem('vault_ok_' + getLocalDateKey(), '1');
+                    document.getElementById('vault-locked').classList.add('hidden');
+                    document.getElementById('vault-unlocked').classList.remove('hidden');
+                    err?.classList.add('hidden');
+                    if (input) input.value = '';
+                    lucide.createIcons();
+                } else {
+                    if (err) {
+                        err.textContent = this.t('vault.wrong');
+                        err.classList.remove('hidden');
+                    }
+                    input?.classList.add('border-red-500');
+                    setTimeout(() => input?.classList.remove('border-red-500'), 800);
+                }
+            }
+
+            updateUI() {
+                const t = DATA.translations[this.lang];
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    const val = key.split('.').reduce((o, i) => o?.[i], t);
+                    if (val !== undefined && val !== '') el.innerText = val;
+                });
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    const val = key.split('.').reduce((o, i) => o?.[i], t);
+                    if (val) el.setAttribute('placeholder', val);
+                });
+                document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-aria');
+                    const val = key.split('.').reduce((o, i) => o?.[i], t);
+                    if (val) el.setAttribute('aria-label', val);
+                });
+                const promptEl = document.getElementById('term-prompt-label');
+                if (promptEl && t.terminal?.prompt) promptEl.textContent = t.terminal.prompt;
+                this.renderTimeline();
+                this.renderProjects({ useLoading: false });
+                this.refreshVaultUi();
+                const tb = document.getElementById('theme-toggle');
+                if (tb) tb.setAttribute('aria-label', this.theme === 'dark' ? this.t('theme.useLight') : this.t('theme.useDark'));
+                lucide.createIcons();
+            }
+
+            renderTimeline() {
+                const cont = document.getElementById('timeline-content');
+                const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                cont.innerHTML = DATA.experiences.map((ex, i) => {
+                    const desc = esc(ex[this.lang]);
+                    const company = esc(ex.company);
+                    const role = esc(ex.role);
+                    const loc = esc(ex.loc);
+                    const year = esc(ex.year);
+                    const left = i % 2 === 0;
+                    const cardHtml = `
+                        <article class="timeline-card glass rounded-2xl border border-white/10 overflow-hidden w-full max-w-md text-left">
+                            <div class="h-40 sm:h-44 overflow-hidden bg-black/40">
+                                <img src="${ex.img}" alt="${company}" class="timeline-img w-full h-full object-cover grayscale" loading="lazy" width="512" height="220">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-[10px] font-mono text-blue-500 uppercase tracking-wider mb-1">${role}</p>
+                                <h3 class="text-white font-bold text-lg md:text-xl mb-1">${company}</h3>
+                                <p class="text-gray-500 text-xs font-mono mb-3">${loc}</p>
+                                <p class="text-gray-400 text-sm leading-relaxed">${desc}</p>
+                            </div>
+                        </article>`;
+                    const yearGhost = `<span class="text-5xl sm:text-6xl md:text-7xl font-bold text-blue-500/10 font-mono select-none pointer-events-none leading-none">${year}</span>`;
+                    return `
+                    <div class="timeline-item relative mb-16 md:mb-24 last:mb-8 reveal group">
+                        <div class="md:hidden relative pl-8 ml-1 border-l border-blue-500/35 pb-2">
+                            <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-[#0a0d12] timeline-node"></div>
+                            <span class="inline-block text-blue-400 font-mono text-xs mb-4">${year}</span>
+                            ${cardHtml}
+                        </div>
+                        <div class="hidden md:block relative">
+                            <div class="grid grid-cols-2 gap-4 lg:gap-8 items-center min-h-[240px]">
+                                <div class="flex justify-end pr-4 lg:pr-12 items-center min-h-[200px]">
+                                    ${left ? cardHtml : `<div class="w-full flex justify-end">${yearGhost}</div>`}
+                                </div>
+                                <div class="flex justify-start pl-4 lg:pl-12 items-center min-h-[200px]">
+                                    ${left ? `<div class="w-full flex justify-start">${yearGhost}</div>` : cardHtml}
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 timeline-node w-11 h-11 rounded-full bg-[#0a0d12] border-2 border-blue-500 flex items-center justify-center font-mono text-[11px] text-blue-400 shadow-[0_0_24px_rgba(88,166,255,0.25)] group-hover:scale-110 transition-transform duration-300 pointer-events-none">${year}</div>
+                        </div>
+                    </div>`;
+                }).join('');
+                this.initRevealForTimeline();
+            }
+
+            initRevealForTimeline() {
+                const obs = new IntersectionObserver((ents) => ents.forEach((e) => {
+                    if (e.isIntersecting) e.target.classList.add('active');
+                }), { threshold: 0.12 });
+                document.querySelectorAll('#timeline-content .reveal').forEach((el) => obs.observe(el));
+            }
+
+            setProjectsLoading(active) {
+                const el = document.getElementById('projects-loading');
+                const bar = document.getElementById('projects-loading-bar');
+                if (!el || !bar) return;
+                if (active) {
+                    el.setAttribute('aria-busy', 'true');
+                    el.setAttribute('aria-hidden', 'false');
+                    el.classList.add('is-active');
+                    bar.style.width = '0%';
+                    bar.style.transition = 'width 0.35s ease-out';
+                    requestAnimationFrame(() => { requestAnimationFrame(() => { bar.style.width = '92%'; }); });
+                } else {
+                    bar.style.width = '100%';
+                    setTimeout(() => {
+                        el.classList.remove('is-active');
+                        el.setAttribute('aria-busy', 'false');
+                        el.setAttribute('aria-hidden', 'true');
+                        bar.style.width = '0%';
+                    }, 200);
+                }
+            }
+
+            async renderProjects(opts = {}) {
+                const useLoading = opts.useLoading === true;
+                if (useLoading) {
+                    this.setProjectsLoading(true);
+                    await new Promise(r => setTimeout(r, 420));
+                }
+                try {
+                    const grid = document.getElementById('projects-grid');
+                    const filtered = DATA.projects.filter(p => this.currentFilter === 'all' || p.cat === this.currentFilter);
+                    const start = (this.currentPage - 1) * this.projectsPerPage;
+                    const paginated = filtered.slice(start, start + this.projectsPerPage);
+
+                    grid.innerHTML = paginated.map(p => `
+                    <article class="project-item glass rounded-2xl overflow-hidden border border-white/5 group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" width="400" height="192">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-mono text-blue-500 uppercase">${p.cat}</span>
+                            <h3 class="text-white font-bold mt-1">${p.title}</h3>
+                        </div>
+                    </article>
+                `).join('');
+
+                    this.renderPagination(filtered.length);
+                } finally {
+                    if (useLoading) this.setProjectsLoading(false);
+                }
+            }
+
+            renderPagination(total) {
+                const pages = Math.ceil(total / this.projectsPerPage);
+                const container = document.getElementById('pagination');
+                if (pages <= 1) { container.innerHTML = ''; return; }
+
+                let btns = '';
+                for (let i = 1; i <= pages; i++) {
+                    btns += `<button type="button" class="page-btn w-8 h-8 rounded border ${this.currentPage === i ? 'bg-blue-600 border-blue-600 text-white' : 'border-white/10 text-gray-500'}" data-page="${i}">${i}</button>`;
+                }
+                container.innerHTML = btns;
+
+                document.querySelectorAll('.page-btn').forEach(b => {
+                    b.onclick = async () => {
+                        this.currentPage = parseInt(b.dataset.page, 10);
+                        await this.renderProjects({ useLoading: true });
+                    };
+                });
+            }
+
+            termAppendLine(html, className = 'text-gray-400') {
+                const out = document.getElementById('term-output');
+                const line = document.createElement('div');
+                line.className = `mb-2 ${className}`;
+                line.innerHTML = html;
+                out.appendChild(line);
+                out.scrollTop = out.scrollHeight;
+            }
+
+            async printTerminal(text, color = 'text-gray-400') {
+                const out = document.getElementById('term-output');
+                const line = document.createElement('div');
+                line.className = `mb-2 whitespace-pre-wrap ${color}`;
+                out.appendChild(line);
+                const safe = text.split('');
+                for (const c of safe) {
+                    const span = document.createElement('span');
+                    span.textContent = c === '\n' ? '\n' : c;
+                    if (c === '\n') line.appendChild(document.createElement('br'));
+                    else line.appendChild(span);
+                    out.scrollTop = out.scrollHeight;
+                    await new Promise(r => setTimeout(r, 4));
+                }
+            }
+
+            echoPrompt(cmd) {
+                const esc = cmd.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                this.termAppendLine(`<span class="text-green-500">${this.t('terminal.prompt')}</span> <span class="text-white">${esc}</span>`, 'text-gray-300');
+            }
+
+            clearTerminal() {
+                document.getElementById('term-output').innerHTML = '';
+            }
+
+            showTermSuggest(val) {
+                const box = document.getElementById('term-suggest');
+                if (!val.startsWith('/')) {
+                    box.classList.add('hidden');
+                    box.innerHTML = '';
+                    return;
+                }
+                const q = val.toLowerCase();
+                const list = SLASH_COMMANDS.filter(s => s.cmd.toLowerCase().startsWith(q));
+                if (!list.length) {
+                    box.classList.add('hidden');
+                    return;
+                }
+                this.suggestIndex = 0;
+                box.innerHTML = list.map((s, i) => {
+                    const d = this.lang === 'pt' ? s.descPt : s.descEn;
+                    return `<button type="button" class="suggest-item w-full text-left px-3 py-2 text-[11px] text-gray-300 hover:bg-white/5 border-b border-white/5 last:border-0 ${i === 0 ? 'active' : ''}" data-cmd="${s.cmd}"><span class="text-blue-400">${s.cmd}</span> <span class="text-gray-500">${d}</span></button>`;
+                }).join('');
+                box.classList.remove('hidden');
+                box.querySelectorAll('.suggest-item').forEach(btn => {
+                    btn.onclick = () => {
+                        document.getElementById('term-input').value = btn.dataset.cmd + ' ';
+                        box.classList.add('hidden');
+                        document.getElementById('term-input').focus();
+                    };
+                });
+            }
+
+            highlightSuggest(dir) {
+                const items = document.querySelectorAll('#term-suggest .suggest-item');
+                if (!items.length) return;
+                items[this.suggestIndex]?.classList.remove('active');
+                this.suggestIndex = (this.suggestIndex + dir + items.length) % items.length;
+                items[this.suggestIndex]?.classList.add('active');
+                items[this.suggestIndex]?.scrollIntoView({ block: 'nearest' });
+            }
+
+            applyActiveSuggest() {
+                let active = document.querySelector('#term-suggest .suggest-item.active');
+                if (!active) active = document.querySelector('#term-suggest .suggest-item');
+                if (active) {
+                    document.getElementById('term-input').value = active.dataset.cmd + ' ';
+                    document.getElementById('term-suggest').classList.add('hidden');
+                }
+            }
+
+            async fetchPublicIp() {
+                try {
+                    const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
+                    const j = await r.json();
+                    return j.ip || '—';
+                } catch {
+                    return '—';
+                }
+            }
+
+            async getLocalIpCandidates() {
+                return new Promise((resolve) => {
+                    const found = new Set();
+                    const pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+                    pc.createDataChannel('');
+                    pc.createOffer().then(o => pc.setLocalDescription(o)).catch(() => resolve([]));
+                    const t = setTimeout(() => { pc.close(); resolve([...found]); }, 2500);
+                    pc.onicecandidate = (e) => {
+                        if (!e.candidate) return;
+                        const m = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(e.candidate.candidate);
+                        if (m && !m[1].startsWith('0.') && m[1] !== '0.0.0.0') found.add(m[1]);
+                    };
+                    pc.onicegatheringstatechange = () => {
+                        if (pc.iceGatheringState === 'complete') {
+                            clearTimeout(t);
+                            pc.close();
+                            resolve([...found]);
+                        }
+                    };
+                });
+            }
+
+            async cmdIpconfig() {
+                const hdr = this.t('terminal.ipconfigHdr');
+                const pub = await this.fetchPublicIp();
+                const locals = await this.getLocalIpCandidates();
+                const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                const lines = [
+                    hdr,
+                    '',
+                    '  Host name (browser) .......: ' + (typeof location !== 'undefined' ? location.hostname : '—'),
+                    '  Public IPv4 ...............: ' + pub,
+                    '  Local ICE candidates .....: ' + (locals.length ? locals.join(', ') : '— (WebRTC não expôs IP local)'),
+                    '  User agent ................: ' + (navigator.userAgent || '—').slice(0, 120) + (navigator.userAgent?.length > 120 ? '…' : ''),
+                ];
+                if (conn) {
+                    lines.push('  Effective connection ......: ' + (conn.effectiveType || '—'));
+                    lines.push('  Downlink estimate .........: ' + (conn.downlink != null ? conn.downlink + ' Mbps' : '—'));
+                    lines.push('  RTT .......................: ' + (conn.rtt != null ? conn.rtt + ' ms' : '—'));
+                }
+                lines.push('', '  Nota: ipconfig real do SO não está disponível no browser; acima: dados da rede/WebRTC.');
+                await this.printTerminal(lines.join('\n'), 'text-gray-300');
+            }
+
+            helpText() {
+                const base = [
+                    'help, ?, ls — esta lista',
+                    'clear, cls — limpar ecrã',
+                    'about — perfil',
+                    'skills — competências',
+                    'exp — timeline',
+                    'ipconfig — rede (browser + IP público)',
+                    'whoami, version — info',
+                    'chat | talk — abrir chat (ou /chat, /talk)',
+                    '/ — lista filtrada ao escrever após /'
+                ];
+                return this.t('terminal.helpHeader') + '\n\n  ' + base.join('\n  ');
+            }
+
+            async processCommand(raw) {
+                const line = raw.trim();
+                if (!line) return;
+                this.termHistory.push(line);
+                this.historyIndex = this.termHistory.length;
+                this.echoPrompt(line);
+
+                const norm = line.toLowerCase();
+                const first = norm.split(/\s+/)[0];
+
+                if (first === '/chat' || first === '/talk' || norm === 'chat' || norm === 'talk') {
+                    await this.printTerminal(this.t('terminal.chatOpened'), 'text-blue-400');
+                    this.openChat();
+                    return;
+                }
+                if (first === '/clear' || first === 'clear' || first === 'cls') {
+                    this.clearTerminal();
+                    return;
+                }
+                if (first === '/ipconfig' || first === 'ipconfig') {
+                    await this.cmdIpconfig();
+                    return;
+                }
+                if (first === '/help' || first === 'help' || first === '?' || first === 'ls') {
+                    await this.printTerminal(this.helpText(), 'text-gray-300');
+                    return;
+                }
+                if (first === '/about' || first === 'about') {
+                    await this.printTerminal(DATA.translations[this.lang].about.text1 + '\n\n' + DATA.translations[this.lang].about.text2, 'text-gray-300');
+                    return;
+                }
+                if (first === '/skills' || first === 'skills') {
+                    await this.printTerminal('Full-Stack · Laravel · Vue · Python · FFmpeg · APIs · Data automation', 'text-gray-300');
+                    return;
+                }
+                if (first === '/exp' || first === 'exp') {
+                    const ex = DATA.experiences.map(e => e.year + ' — ' + e.company + ' · ' + e.role + '\n   ' + e[this.lang]).join('\n\n');
+                    await this.printTerminal(ex, 'text-gray-300');
+                    return;
+                }
+                if (first === 'whoami') {
+                    await this.printTerminal('guest (EdOS shell)', 'text-gray-300');
+                    return;
+                }
+                if (first === 'version') {
+                    await this.printTerminal('EdOS Kernel 6.2.0-v7+ (browser shell)', 'text-gray-300');
+                    return;
+                }
+                if (first === 'exit') {
+                    await this.printTerminal('exit: sessão web mantida. Fecha o separador para sair.', 'text-yellow-500');
+                    return;
+                }
+
+                await this.printTerminal(this.t('terminal.unknown') + line, 'text-red-400');
+            }
+
+            async translateText(text, from, to) {
+                if (!text || from === to) return text;
+                try {
+                    const url = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=' + encodeURIComponent(from + '|' + to);
+                    const r = await fetch(url);
+                    const j = await r.json();
+                    if (j.responseStatus === 200 && j.responseData?.translatedText)
+                        return j.responseData.translatedText;
+                } catch (e) { /* fallback below */ }
+                return text;
+            }
+
+            async syncChatToLang(targetLang) {
+                if (!this.chatMessages.length) return;
+                const codes = { pt: 'pt', en: 'en' };
+                for (const msg of this.chatMessages) {
+                    const cached = msg.displayCache[targetLang];
+                    if (cached != null && String(cached).length > 0) continue;
+                    if (msg.originalLang === targetLang) {
+                        msg.displayCache[targetLang] = msg.originalText;
+                    } else {
+                        const from = codes[msg.originalLang];
+                        const to = codes[targetLang];
+                        msg.displayCache[targetLang] = await this.translateText(msg.originalText, from, to);
+                        await new Promise(r => setTimeout(r, 150));
+                    }
+                }
+                this.renderChatMessages(targetLang);
+            }
+
+            renderChatMessages(forLang) {
+                const L = forLang ?? this.lang;
+                const box = document.getElementById('chat-messages');
+                if (!box) return;
+                box.innerHTML = '';
+                for (const msg of this.chatMessages) {
+                    const text = (msg.displayCache[L] != null && msg.displayCache[L] !== '') ? msg.displayCache[L] : msg.originalText;
+                    const div = document.createElement('div');
+                    div.className = msg.role === 'user' ? 'chat-msg-user px-3 py-2 rounded-lg max-w-[90%]' : 'chat-msg-bot px-3 py-2 rounded-lg max-w-[90%]';
+                    div.textContent = text;
+                    box.appendChild(div);
+                }
+                box.scrollTop = box.scrollHeight;
+            }
+
+            addChatMessage(role, text) {
+                const lang = this.lang;
+                this.chatMessages.push({
+                    role,
+                    originalLang: lang,
+                    originalText: text,
+                    displayCache: { [lang]: text }
+                });
+                this.renderChatMessages();
+            }
+
+            setChatFabOpen(isOpen) {
+                const fab = document.getElementById('chat-fab');
+                if (!fab) return;
+                fab.classList.toggle('hidden', isOpen);
+                fab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+
+            openChat() {
+                const panel = document.getElementById('chat-panel');
+                const back = document.getElementById('chat-backdrop');
+                this.setChatFabOpen(true);
+                back.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    back.classList.remove('opacity-0');
+                    panel.classList.remove('hidden');
+                    requestAnimationFrame(() => {
+                        panel.classList.remove('scale-95', 'opacity-0');
+                    });
+                });
+                back.setAttribute('aria-hidden', 'false');
+                if (!this.chatMessages.length) {
+                    this.addChatMessage('bot', this.t('chat.welcome'));
+                } else {
+                    this.renderChatMessages();
+                }
+                document.getElementById('chat-input').focus();
+                lucide.createIcons();
+            }
+
+            closeChat() {
+                const panel = document.getElementById('chat-panel');
+                const back = document.getElementById('chat-backdrop');
+                back.classList.add('opacity-0');
+                panel.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    panel.classList.add('hidden');
+                    back.classList.add('hidden');
+                    back.setAttribute('aria-hidden', 'true');
+                    this.setChatFabOpen(false);
+                }, 300);
+                document.getElementById('term-input')?.focus();
+            }
+
+            async respondChat(userText) {
+                const typing = document.getElementById('chat-typing');
+                typing.classList.remove('hidden');
+                const lower = userText.toLowerCase();
+                const faq = CHAT_FAQ.find(f => f.keys.some(k => lower.includes(k)));
+                const replies = DATA.translations[this.lang].chat.replies;
+                let reply;
+                if (faq) {
+                    reply = this.lang === 'pt' ? faq.replyPt : faq.replyEn;
+                } else {
+                    reply = replies[this.chatReplyIndex % replies.length];
+                    this.chatReplyIndex++;
+                }
+                await new Promise(r => setTimeout(r, 500 + Math.random() * 700));
+                typing.classList.add('hidden');
+                this.addChatMessage('bot', reply);
+            }
+
+            installDevToolsGuards() {
+                document.addEventListener('contextmenu', (e) => { e.preventDefault(); }, { passive: false });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'F12') { e.preventDefault(); return; }
+                    if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C', 'K'].includes(e.key.toUpperCase())) { e.preventDefault(); return; }
+                    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); return; }
+                    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); return; }
+                    if (e.metaKey && e.altKey && e.key.toLowerCase() === 'i') { e.preventDefault(); return; }
+                }, true);
+            }
+
+            bindEvents() {
+                document.getElementById('btn-confirm').onclick = () => {
+                    localStorage.setItem('gate_passed', 'true');
+                    this.unlockSite();
+                };
+                document.getElementById('theme-toggle').onclick = () => {
+                    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+                    localStorage.setItem('edos_theme', this.theme);
+                    this.applyTheme();
+                };
+                document.getElementById('btn-unlock').onclick = () => this.tryUnlockVault();
+                const passInput = document.getElementById('input-pass');
+                passInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.tryUnlockVault();
+                    }
+                });
+                passInput.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                });
+
+                document.querySelectorAll('.lang-btn').forEach(b => {
+                    b.onclick = async () => {
+                        const next = b.dataset.lang;
+                        if (next === this.lang) return;
+                        await this.syncChatToLang(next);
+                        this.lang = next;
+                        document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('bg-blue-600', 'text-white'));
+                        b.classList.add('bg-blue-600', 'text-white');
+                        this.updateUI();
+                        this.renderChatMessages();
+                    };
+                });
+                document.querySelectorAll('.lang-btn').forEach(b => {
+                    if (b.dataset.lang === this.lang) b.classList.add('bg-blue-600', 'text-white');
+                });
+
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.onclick = async () => {
+                        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                        b.classList.add('active');
+                        this.currentFilter = b.dataset.filter;
+                        this.currentPage = 1;
+                        await this.renderProjects({ useLoading: true });
+                    };
+                });
+
+                document.getElementById('chat-fab').onclick = () => this.openChat();
+
+                const termInput = document.getElementById('term-input');
+                termInput.addEventListener('input', () => this.showTermSuggest(termInput.value));
+
+                termInput.addEventListener('keydown', async (e) => {
+                    const box = document.getElementById('term-suggest');
+                    const open = !box.classList.contains('hidden') && box.querySelector('.suggest-item');
+
+                    if (e.key === 'ArrowDown' && open) {
+                        e.preventDefault();
+                        this.highlightSuggest(1);
+                        return;
+                    }
+                    if (e.key === 'ArrowUp' && open) {
+                        e.preventDefault();
+                        this.highlightSuggest(-1);
+                        return;
+                    }
+                    if (e.key === 'Tab' && open) {
+                        e.preventDefault();
+                        this.applyActiveSuggest();
+                        return;
+                    }
+
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (open) {
+                            this.applyActiveSuggest();
+                            const v = termInput.value.trim();
+                            termInput.value = '';
+                            document.getElementById('term-suggest').classList.add('hidden');
+                            if (v) await this.processCommand(v);
+                            return;
+                        }
+                        const v = termInput.value;
+                        termInput.value = '';
+                        document.getElementById('term-suggest').classList.add('hidden');
+                        await this.processCommand(v);
+                        return;
+                    }
+
+                    if (e.key === 'Escape') {
+                        document.getElementById('term-suggest').classList.add('hidden');
+                        return;
+                    }
+
+                    if (e.key === 'ArrowUp' && !open && document.activeElement === termInput) {
+                        if (this.termHistory.length) {
+                            e.preventDefault();
+                            this.historyIndex = Math.max(0, this.historyIndex - 1);
+                            termInput.value = this.termHistory[this.historyIndex] ?? '';
+                        }
+                    }
+                    if (e.key === 'ArrowDown' && !open && document.activeElement === termInput) {
+                        if (this.termHistory.length) {
+                            e.preventDefault();
+                            this.historyIndex = Math.min(this.termHistory.length, this.historyIndex + 1);
+                            termInput.value = this.historyIndex >= this.termHistory.length ? '' : (this.termHistory[this.historyIndex] ?? '');
+                        }
+                    }
+                });
+
+                document.getElementById('chat-close').onclick = () => this.closeChat();
+                document.getElementById('chat-backdrop').onclick = () => this.closeChat();
+
+                const chatInput = document.getElementById('chat-input');
+                chatInput.addEventListener('keydown', async (e) => {
+                    if (e.key !== 'Enter') return;
+                    e.preventDefault();
+                    const t = chatInput.value.trim();
+                    if (!t) return;
+                    chatInput.value = '';
+                    this.addChatMessage('user', t);
+                    await this.respondChat(t);
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !document.getElementById('chat-panel').classList.contains('hidden')) {
+                        this.closeChat();
+                    }
+                });
+            }
+
+            initReveal() {
+                const obs = new IntersectionObserver(ents => ents.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }), { threshold: 0.1 });
+                document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+            }
+        }
+
+        window.addEventListener('load', () => new EdOSEngine());
+    </script>
 </body>
 </html>
