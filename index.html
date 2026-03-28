@@ -142,7 +142,9 @@
         body.light-mode .bg-blue-600, body.light-mode .bg-blue-500 { color: #ffffff !important; }
         body.light-mode .text-blue-400 { color: #2563eb !important; }
         body.light-mode .text-blue-500 { color: #2563eb !important; }
-        .font-mono { font-family: 'Fira Code', monospace; }
+        .font-mono { font-family: 'Fira Code Nerd', 'Fira Code', 'Fire Code Nerd', 'Cascadia Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-variant-ligatures: contextual; font-feature-settings: 'calt' 1, 'liga' 1; }
+        #term-output { font-family: 'Fira Code Nerd', 'Fira Code', 'Fire Code Nerd', 'Cascadia Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-variant-ligatures: contextual; font-feature-settings: 'calt' 1, 'liga' 1; }
+        
         .custom-scrollbar::-webkit-scrollbar { height: 4px; width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
         #loader { position: fixed; inset: 0; z-index: 10000; background: #0d1117; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
@@ -462,7 +464,7 @@
                 {
                     year: "2025-present",
                     company: "MUBE",
-                    loc: "Évora, Portugal",
+                    loc: ", PT",
                     role: "Senior Full-Stack Engineer",
                     img: "https://media.licdn.com/dms/image/v2/D4D2DAQFDpm3P0Ty73A/profile-treasury-image-shrink_1280_1280/B4DZbZuPprHsAY-/0/1747409501679?e=1775314800&v=beta&t=NhlieUdOOIf7p6596KtNAIwRyb1oLx4X-zHekxhsUdk",
                     pt: "Como referência técnica na MUBE, impulsiono a eficiência operacional e o crescimento do negócio através da criação de arquiteturas escaláveis, automação de dados complexos e garantia de excelência em todo o ciclo de vida de desenvolvimento.",
@@ -480,7 +482,7 @@
                 {
                     year: "2023",
                     company: "Oxy.Agency",
-                    loc: "Lisboa, PT",
+                    loc: "Hybrid, PT",
                     role: "Full-Stack Developer",
                     img: "https://images.unsplash.com/photo-1454165833767-027ffea9e78b?q=80&w=400",
                     pt: "Construção de landing pages e funcionalidades de e-commerce com Livewire e AlpineJS, aliada à gestão de ambientes contentorizados com Docker e pipelines CI/CD.",
@@ -506,22 +508,166 @@
                 { title: "Casamento - Júlio & Maria", cat: "photo", img: "/u/eduubessa/dev/p-photo-1.jpg" },
                 { title: "Sessão - Miriam & Daniel", cat: "photo", img: "/u/eduubessa/dev/p-photo-2.jpg" },
                 { title: "Grant's Triple Wood", cat: "photo", img: "/u/eduubessa/dev/p-photo-3.jpg" },
-                 { title: "KuriakosTV StreamingPlataform", cat: "dev", img: "https://media.licdn.com/dms/image/v2/D4D2DAQHvhtMC3dSL_Q/profile-treasury-image-shrink_1280_1280/B4DZbZudDBGwAU-/0/1747409556640?e=1775314800&v=beta&t=oAsj4evbB_-ZMXAqPATwrnGWLhXZX3VTZ059aJYRk6E" },
+                { title: "KuriakosTV StreamingPlataform", cat: "dev", img: "https://media.licdn.com/dms/image/v2/D4D2DAQHvhtMC3dSL_Q/profile-treasury-image-shrink_1280_1280/B4DZbZudDBGwAU-/0/1747409556640?e=1775314800&v=beta&t=oAsj4evbB_-ZMXAqPATwrnGWLhXZX3VTZ059aJYRk6E" },
+                { title: "MUBE Branding", cat: "design", img: "https://scontent.flis5-4.fna.fbcdn.net/v/t39.30808-6/481481665_122102420708788270_8657217368174768092_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=igcA5TV0_koQ7kNvwEC6ZW4&_nc_oc=Adpb0BgP1RzG9t3faX5At_7eFHxLEVshyQ7IM1uSnjeW3oZu3bWdfOOqX6oN_3FX4HLLSx7vJfb_4U7l7J1ksjHk&_nc_zt=23&_nc_ht=scontent.flis5-4.fna&_nc_gid=0QiED3cHg0Yx_PfBKJyzXg&_nc_ss=7a32e&oh=00_AfzZvL0LOM99b8n3BXr4HkpphgJ_s2ALQ6-P74Da0r8DUw&oe=69CDA931"},
+                { title: "Social Media", cat: "design", img: "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/498234791_122129168324788270_3014656468936217955_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=vS_8aF9nrVEQ7kNvwEkhjyB&_nc_oc=AdoXE7dRgHdLcACMUnZSSxNgJx482khtsCqLbmew1YYt9MFmvQTqd87WNG636_xu-04vmtugTP4EDtUj-EBGaOkm&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=ve4vCmez6nnTF_dVTTkxpw&_nc_ss=7a32e&oh=00_AfxcSWyoAY0nh2NyBzN2bbjgsQxaWXLfSlYNfn870gP7OA&oe=69CDDA89"},
+                { title: "MUBE Social Media", cat: "design", img: "https://scontent.flis5-4.fna.fbcdn.net/v/t39.30808-6/497514955_122129155850788270_2096264749950894024_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=MeZVMrS1lOUQ7kNvwE6pNU9&_nc_oc=Ado5JH6cooeKyCVtWxvbWohfYSADMi6ksF0HJ0LwNmm_dPa-VzMvvP5zfO1sfufO-KudRE0P4biYtXcAZ0rouE0Y&_nc_zt=23&_nc_ht=scontent.flis5-4.fna&_nc_gid=ZmwfckkRoyBEeYXRKWXjQg&_nc_ss=7a32e&oh=00_AfzgFLKVKf4K-N4YYyFA3XQbmdJVgFhL3tj7goK1_sqpkA&oe=69CDD13B"}
             ],
+            tips: {
+                pt: {
+                    dev: [
+                        "Sempre escreve código legível: nomeia variáveis e funções de forma descritiva.",
+                        "Testa o teu código frequentemente para evitar bugs maiores.",
+                        "Usa controlo de versões (Git) para rastrear mudanças.",
+                        "Aprende uma nova linguagem ou framework todos os anos.",
+                        "Documenta o teu código com comentários claros.",
+                        "Refatora código duplicado para manter a manutenção fácil.",
+                        "Prioriza a segurança: valida inputs e usa HTTPS.",
+                        "Colabora em projetos open-source para aprender com outros.",
+                        "Mantém-te atualizado com as últimas tendências tecnológicas.",
+                        "Escreve testes automatizados para garantir qualidade."
+                    ],
+                    design: [
+                        "Foca na hierarquia visual para guiar o olho do utilizador.",
+                        "Usa uma paleta de cores consistente em todo o projeto.",
+                        "Mantém o design simples e evita sobrecarga visual.",
+                        "Testa o design em diferentes dispositivos e tamanhos de ecrã.",
+                        "Incorpora espaço em branco para melhorar a legibilidade.",
+                        "Usa tipografia adequada: escolhe fontes legíveis e hierárquicas.",
+                        "Inspira-te em designs existentes, mas cria algo único.",
+                        "Considera a acessibilidade: contrates altos e textos alternativos.",
+                        "Itera baseado em feedback dos utilizadores.",
+                        "Aprende princípios de design como proximidade e alinhamento."
+                    ],
+                    photo: [
+                        "A regra dos terços ajuda a compor imagens equilibradas.",
+                        "A luz natural é a melhor para fotografias realistas.",
+                        "Experimenta diferentes ângulos para capturar perspetivas únicas.",
+                        "Usa o modo manual para controlo total sobre exposição.",
+                        "Edita fotos com moderação para manter a autenticidade.",
+                        "Fotografa em RAW para mais flexibilidade na edição.",
+                        "Estuda a obra de fotógrafos famosos para inspiração.",
+                        "Pratica diariamente para melhorar as tuas habilidades.",
+                        "Limpa a lente antes de fotografar para evitar manchas.",
+                        "Conta uma história com as tuas imagens."
+                    ]
+                },
+                en: {
+                    dev: [
+                        "Always write readable code: name variables and functions descriptively.",
+                        "Test your code frequently to avoid major bugs.",
+                        "Use version control (Git) to track changes.",
+                        "Learn a new language or framework every year.",
+                        "Document your code with clear comments.",
+                        "Refactor duplicate code to keep maintenance easy.",
+                        "Prioritize security: validate inputs and use HTTPS.",
+                        "Contribute to open-source projects to learn from others.",
+                        "Stay updated with the latest tech trends.",
+                        "Write automated tests to ensure quality."
+                    ],
+                    design: [
+                        "Focus on visual hierarchy to guide the user's eye.",
+                        "Use a consistent color palette throughout the project.",
+                        "Keep the design simple and avoid visual overload.",
+                        "Test the design on different devices and screen sizes.",
+                        "Incorporate white space to improve readability.",
+                        "Use appropriate typography: choose legible and hierarchical fonts.",
+                        "Get inspired by existing designs, but create something unique.",
+                        "Consider accessibility: high contrasts and alternative texts.",
+                        "Iterate based on user feedback.",
+                        "Learn design principles like proximity and alignment."
+                    ],
+                    photo: [
+                        "The rule of thirds helps compose balanced images.",
+                        "Natural light is best for realistic photographs.",
+                        "Experiment with different angles to capture unique perspectives.",
+                        "Use manual mode for full control over exposure.",
+                        "Edit photos moderately to maintain authenticity.",
+                        "Photograph in RAW for more editing flexibility.",
+                        "Study the work of famous photographers for inspiration.",
+                        "Practice daily to improve your skills.",
+                        "Clean the lens before photographing to avoid spots.",
+                        "Tell a story with your images."
+                    ]
+                }
+            },
             translations: {
                 pt: {
                     gate: { title: "CONTROLO DE ACESSO", confirm: "Confirmar Acesso" },
                     theme: { useLight: "Ativar tema claro", useDark: "Ativar tema escuro" },
                     nav: { home: "Início", about: "Perfil", exp: "Timeline", projects: "Projetos", terminal: "Terminal", contact: "Contacto" },
                     hero: { subtitle: "Multimedia & Full-Stack Engineer" },
-                    about: { text1: "Arquiteto de soluções digitais focado em ecossistemas escaláveis.", text2: "Especialista em Laravel, Vue e Python." },
+                    about: { text1: "Arquiteto de soluções digitais focado em ecossistemas escaláveis, automação de dados e streaming.", text2: "Especialista em Laravel, Vue, Python, CI/CD e infraestrutura cloud (AWS/Azure)." },
                     terminal: {
                         welcome: "EdOS Kernel 6.2.0-v7+\nPronto para comandos. Escreve / para comandos ou help.",
                         prompt: "guest@edos:~$",
                         unknown: "Comando desconhecido: ",
                         helpHeader: "Comandos disponíveis:",
+                        helpCommands: [
+                            "help, ?, ls — esta lista",
+                            "clear, cls — limpar ecrã",
+                            "about — sobre o perfil",
+                            "skills — competências detalhadas",
+                            "exp — experiência",
+                            "ipconfig — rede (browser + IP público)",
+                            "socials — redes sociais",
+                            "weather — previsão do tempo",
+                            "quote — citação aleatória",
+                            "joke — piada aleatória",
+                            "fact — fato aleatório",
+                            "cat — imagem de gato aleatória",
+                            "dog — imagem de cão aleatória",
+                            "echo — ecoar texto",
+                            "date — data e hora atuais",
+                            "tip-dev — dica aleatória de desenvolvimento",
+                            "tip-design — dica aleatória de design",
+                            "tip-photo — dica aleatória de fotografia",
+                            "tip-random — dica aleatória de qualquer categoria",
+                            "ping — testar conectividade HTTP",
+                            "code — como calcular o código diário",
+                            "whoami — identidade do shell",
+                            "version — versão do kernel",
+                            "chat | talk — abrir chat (ou /chat, /talk)",
+                            "/ — lista filtrada ao escrever após /"
+                        ],
                         chatOpened: "Chat em tempo real ativo. Usa /chat ou /talk para voltar a abrir.",
-                        ipconfigHdr: "Configuração IP do browser (dados reais quando disponíveis):"
+                        weatherUsage: "Uso: /weather --location=Evora (ou /weather Evora)",
+                        weatherFetch: "A obter previsão para",
+                        weatherNoLocation: "Localização não encontrada.",
+                        weatherError: "Erro a obter dados meteorológicos.",
+                        weatherHeader: "DATA       DIA      MÍN/MÁX      VENTO    TEMPO",
+                        weatherTemperature: "Temp (min/max)",
+                        weatherWind: "Vento",
+                        ipconfigHdr: "Configuração IP do browser (dados reais quando disponíveis):",
+                        skillsInfo: "Full-Stack · Laravel · Vue · Python · FFmpeg · APIs · Automação de dados · DevOps · Cloud",
+                        socialsInfo: "💼 LinkedIn: https://linkedin.com/in/eduardobessa\n🐙 GitHub: https://github.com/eduubessa\n📸 Instagram: https://instagram.com/eduubessa",
+                        codeHintIntro: "O código diário é gerado com base na data local + valor secreto armazenado no VAULT_SECRET.",
+                        codeHintMethod: "Algoritmo: SHA-256(data + segredo) → bytes → seleciona 8 caracteres de um alfabeto seguro (sem 0, O, I, L) .",
+                        codeHintExtra: "Usa /vault para verificar o valor atual e /code para entender a fórmula.",
+                        whoamiInfo: "guest (EdOS shell)",
+                        versionInfo: "EdOS Kernel 6.2.0-v7+ (browser shell)",
+                        aboutDetails: "Sou Eduardo Bessa, engenheiro full-stack e multimédia com foco em soluções escaláveis, streaming, e infra e automação de dados.",
+                        quoteFetch: "Buscando citação aleatória...",
+                        quoteError: "Erro ao buscar citação. Tenta novamente.",
+                        jokeFetch: "Buscando piada aleatória...",
+                        jokeError: "Erro ao buscar piada. Tenta novamente.",
+                        factFetch: "Buscando fato aleatório...",
+                        factError: "Erro ao buscar fato. Tenta novamente.",
+                        catFetch: "Buscando imagem de gato aleatória...",
+                        catError: "Erro ao buscar imagem de gato. Tenta novamente.",
+                        dogFetch: "Buscando imagem de cão aleatória...",
+                        dogError: "Erro ao buscar imagem de cão. Tenta novamente.",
+                        echoUsage: "Uso: /echo <texto>",
+                        dateInfo: "Data e hora atuais:",
+                        tipDev: "💻 Dica de desenvolvimento:",
+                        tipDesign: "🎨 Dica de design:",
+                        tipPhoto: "📸 Dica de fotografia:",
+                        tipRandom: "🎲 Dica aleatória:",
+                        tipNoTips: "Nenhuma dica disponível.",
+                        pingUsage: "Uso: /ping [url] (padrão: google.com)",
+                        pingTesting: "Testando conectividade para",
+                        pingSuccess: "Sucesso! Tempo de resposta:",
+                        pingError: "Erro ao conectar."
                     },
                     projects: { loadingLabel: "A_Carregar_Projetos..." },
                     vault: {
@@ -554,14 +700,77 @@
                     theme: { useLight: "Switch to light theme", useDark: "Switch to dark theme" },
                     nav: { home: "Home", about: "Profile", exp: "Timeline", projects: "Projects", terminal: "Terminal", contact: "Contact" },
                     hero: { subtitle: "Multimedia & Full-Stack Engineer" },
-                    about: { text1: "Digital solutions architect focused on scalable ecosystems.", text2: "Specialist in Laravel, Vue and Python." },
+                    about: { text1: "Digital solutions architect focused on scalable ecosystems, data automation, and streaming.", text2: "Specialist in Laravel, Vue, Python, CI/CD and cloud infrastructure (AWS/Azure)." },
                     terminal: {
                         welcome: "EdOS Kernel 6.2.0-v7+\nReady for commands. Type / for commands or help.",
                         prompt: "guest@edos:~$",
                         unknown: "Unknown command: ",
                         helpHeader: "Available commands:",
+                        helpCommands: [
+                            "help, ?, ls — this list",
+                            "clear, cls — clear screen",
+                            "about — profile info",
+                            "skills — detailed skills",
+                            "exp — experience",
+                            "ipconfig — network (browser + public IP)",
+                            "socials — social links",
+                            "weather — weather forecast",
+                            "quote — random quote",
+                            "joke — random joke",
+                            "fact — random fact",
+                            "cat — random cat image",
+                            "dog — random dog image",
+                            "echo — echo text",
+                            "date — current date and time",
+                            "tip-dev — random dev tip",
+                            "tip-design — random design tip",
+                            "tip-photo — random photo tip",
+                            "tip-random — random tip from any category",
+                            "ping — test HTTP connectivity",
+                            "code — how daily code is computed",
+                            "whoami — shell identity",
+                            "version — kernel version",
+                            "chat | talk — open chat (or /chat, /talk)",
+                            "/ — filtered list when typing after /"
+                        ],
                         chatOpened: "Realtime chat open. Use /chat or /talk to open again.",
-                        ipconfigHdr: "Browser network info (real data when available):"
+                        weatherUsage: "Usage: /weather --location=Evora (or /weather Evora)",
+                        weatherFetch: "Fetching forecast for",
+                        weatherNoLocation: "Location not found.",
+                        weatherError: "Error fetching weather data.",
+                        weatherHeader: "DATE       DAY      MIN/MAX      WIND    WEATHER",
+                        weatherTemperature: "Temp (min/max)",
+                        weatherWind: "Wind",
+                        ipconfigHdr: "Browser network info (real data when available):",
+                        skillsInfo: "Full-Stack · Laravel · Vue · Python · FFmpeg · APIs · Data automation · DevOps · Cloud",
+                        socialsInfo: "💼 LinkedIn: https://linkedin.com/in/eduardobessa\n🐙 GitHub: https://github.com/eduubessa\n📸 Instagram: https://instagram.com/eduubessa",
+                        codeHintIntro: "Daily code is generated from local date + secret value in VAULT_SECRET.",
+                        codeHintMethod: "Algorithm: SHA-256(date + secret) → bytes → pick 8 chars from safe alphabet (no 0/O/I/L).",
+                        codeHintExtra: "Use /vault to check today and /code for the formula.",
+                        whoamiInfo: "guest (EdOS shell)",
+                        versionInfo: "EdOS Kernel 6.2.0-v7+ (browser shell)",
+                        aboutDetails: "I'm Eduardo Bessa, a full-stack and multimedia engineer focused on scalable solutions, streaming, and data automation/infra.",
+                        quoteFetch: "Fetching random quote...",
+                        quoteError: "Error fetching quote. Try again.",
+                        jokeFetch: "Fetching random joke...",
+                        jokeError: "Error fetching joke. Try again.",
+                        factFetch: "Fetching random fact...",
+                        factError: "Error fetching fact. Try again.",
+                        catFetch: "Fetching random cat image...",
+                        catError: "Error fetching cat image. Try again.",
+                        dogFetch: "Fetching random dog image...",
+                        dogError: "Error fetching dog image. Try again.",
+                        echoUsage: "Usage: /echo <text>",
+                        dateInfo: "Current date and time:",
+                        tipDev: "💻 Dev tip:",
+                        tipDesign: "🎨 Design tip:",
+                        tipPhoto: "📸 Photo tip:",
+                        tipRandom: "🎲 Random tip:",
+                        tipNoTips: "No tips available.",
+                        pingUsage: "Usage: /ping [url] (default: google.com)",
+                        pingTesting: "Testing connectivity to",
+                        pingSuccess: "Success! Response time:",
+                        pingError: "Connection error."
                     },
                     projects: { loadingLabel: "Loading_Projects..." },
                     vault: {
@@ -654,12 +863,26 @@
             { cmd: '/ipconfig', descPt: 'Info de rede (browser)', descEn: 'Network info (browser)' },
             { cmd: '/about', descPt: 'Sobre o sistema', descEn: 'About system' },
             { cmd: '/skills', descPt: 'Competências', descEn: 'Skills' },
+            { cmd: '/socials', descPt: 'Redes sociais', descEn: 'Social links' },
+            { cmd: '/weather', descPt: 'Previsão do tempo', descEn: 'Weather forecast' },
+            { cmd: '/quote', descPt: 'Citação aleatória', descEn: 'Random quote' },
+            { cmd: '/joke', descPt: 'Piada aleatória', descEn: 'Random joke' },
+            { cmd: '/fact', descPt: 'Fato aleatório', descEn: 'Random fact' },
+            { cmd: '/cat', descPt: 'Imagem aleatória de gato', descEn: 'Random cat image' },
+            { cmd: '/dog', descPt: 'Imagem aleatória de cão', descEn: 'Random dog image' },
+            { cmd: '/echo', descPt: 'Ecoar texto', descEn: 'Echo text' },
+            { cmd: '/date', descPt: 'Data e hora atuais', descEn: 'Current date and time' },
+            { cmd: '/tip-dev', descPt: 'Dica aleatória de desenvolvimento', descEn: 'Random dev tip' },
+            { cmd: '/tip-design', descPt: 'Dica aleatória de design', descEn: 'Random design tip' },
+            { cmd: '/tip-photo', descPt: 'Dica aleatória de fotografia', descEn: 'Random photo tip' },
+            { cmd: '/tip-random', descPt: 'Dica aleatória de qualquer categoria', descEn: 'Random tip from any category' },
+            { cmd: '/ping', descPt: 'Testar conectividade HTTP', descEn: 'Test HTTP connectivity' },
             { cmd: '/exp', descPt: 'Experiência', descEn: 'Experience' }
         ];
 
         class EdOSEngine {
             constructor() {
-                this.lang = 'pt';
+                this.lang = localStorage.getItem('edos_lang') || 'en';
                 this.currentFilter = 'all';
                 this.currentPage = 1;
                 this.projectsPerPage = 6;
@@ -966,24 +1189,30 @@
 
             showTermSuggest(val) {
                 const box = document.getElementById('term-suggest');
-                if (!val.startsWith('/')) {
+                const inputValue = String(val || '').trim();
+                if (!inputValue && !inputValue.startsWith('/')) {
                     box.classList.add('hidden');
                     box.innerHTML = '';
                     return;
                 }
-                const q = val.toLowerCase();
-                const list = SLASH_COMMANDS.filter(s => s.cmd.toLowerCase().startsWith(q));
+
+                const normalized = inputValue.toLowerCase();
+                const list = SLASH_COMMANDS.filter(s => s.cmd.toLowerCase().startsWith(normalized) || (normalized.startsWith('/') && s.cmd.toLowerCase().startsWith(normalized)));
+
                 if (!list.length) {
                     box.classList.add('hidden');
+                    box.innerHTML = '';
                     return;
                 }
+
                 this.suggestIndex = 0;
                 box.innerHTML = list.map((s, i) => {
                     const d = this.lang === 'pt' ? s.descPt : s.descEn;
                     return `<button type="button" class="suggest-item w-full text-left px-3 py-2 text-[11px] text-gray-300 hover:bg-white/5 border-b border-white/5 last:border-0 ${i === 0 ? 'active' : ''}" data-cmd="${s.cmd}"><span class="text-blue-400">${s.cmd}</span> <span class="text-gray-500">${d}</span></button>`;
                 }).join('');
                 box.classList.remove('hidden');
-                box.querySelectorAll('.suggest-item').forEach(btn => {
+
+                box.querySelectorAll('.suggest-item').forEach((btn, idx) => {
                     btn.onclick = () => {
                         document.getElementById('term-input').value = btn.dataset.cmd + ' ';
                         box.classList.add('hidden');
@@ -1064,8 +1293,241 @@
                 await this.printTerminal(lines.join('\n'), 'text-gray-300');
             }
 
+            async cmdWeather(location) {
+                try {
+                    const keyName = `weather_${location.trim().toLowerCase().replace(/\s+/g, '_')}`;
+                    const ttlMs = 1000 * 60 * 30; // 30 minutos
+                    const now = Date.now();
+
+                    const cacheRaw = localStorage.getItem(keyName);
+                    let weatherData = null;
+                    let fromCache = false;
+
+                    if (cacheRaw) {
+                        try {
+                            const parsed = JSON.parse(cacheRaw);
+                            if (parsed && parsed.timestamp && now - parsed.timestamp < ttlMs && parsed.place && parsed.daily) {
+                                weatherData = parsed;
+                                fromCache = true;
+                            }
+                        } catch (e) {
+                            localStorage.removeItem(keyName);
+                        }
+                    }
+
+                    await this.printTerminal(`${this.t('terminal.weatherFetch')} ${location}...`, 'text-gray-300');
+
+                    if (!fromCache) {
+                        const normalize = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+                        const sources = [location, normalize(location)];
+                        let geoJson = null;
+                        let place = null;
+
+                        for (const loc of sources) {
+                            const q = encodeURIComponent(loc);
+                            try {
+                                const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${q}&count=1&language=${this.lang}`);
+                                const json = await geoRes.json();
+                                if (json?.results?.length) {
+                                    geoJson = json;
+                                    place = json.results[0];
+                                    break;
+                                }
+                            } catch (e) {
+                                // ignore e e tenta next
+                            }
+                        }
+
+                        if (!place) {
+                            // fallback OSM (aberto, sem necessidade de chave)
+                            const q = encodeURIComponent(location);
+                            try {
+                                const osmRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`);
+                                const osmJson = await osmRes.json();
+                                if (Array.isArray(osmJson) && osmJson.length) {
+                                    const osm = osmJson[0];
+                                    place = {
+                                        name: osm.display_name || location,
+                                        country: '',
+                                        latitude: osm.lat,
+                                        longitude: osm.lon
+                                    };
+                                }
+                            } catch (e) {
+                                // ignore
+                            }
+                        }
+
+                        if (!place) {
+                            await this.printTerminal(this.t('terminal.weatherNoLocation'), 'text-red-400');
+                            return;
+                        }
+
+                        const lat = place.latitude;
+                        const lon = place.longitude;
+                        const placeName = place.country ? `${place.name}, ${place.country}` : place.name;
+
+                        const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,windspeed_10m_max,weathercode,precipitation_sum&timezone=auto`);
+                        const weatherJson = await weatherRes.json();
+                        const daily = weatherJson?.daily;
+                        if (!daily || !daily.time || !daily.time.length) {
+                            await this.printTerminal(this.t('terminal.weatherError'), 'text-red-400');
+                            return;
+                        }
+                        weatherData = {
+                            timestamp: now,
+                            place: `${placeName}`,
+                            daily
+                        };
+                        localStorage.setItem(keyName, JSON.stringify(weatherData));
+                    }
+
+                    const { place, daily } = weatherData;
+                    await this.printTerminal(`📍 ${place} ${fromCache ? '(cache)' : '(live)'}`,'text-blue-400');
+                    await this.printTerminal(`${this.t('terminal.weatherDayHeader').padEnd(12)} ${this.t('terminal.weatherTemperature').padEnd(20)} ${this.t('terminal.weatherWind')}`, 'text-gray-300');
+
+                    const codeMap = {
+                        0: { label: 'Clear', emoji:'☀️' },
+                        1: { label: 'Mainly clear', emoji:'🌤️' },
+                        2: { label: 'Partly cloudy', emoji:'⛅' },
+                        3: { label: 'Overcast', emoji:'☁️' },
+                        45: { label: 'Fog', emoji:'🌫️' },
+                        48: { label: 'Depositing rime fog', emoji:'🌫️' },
+                        51: { label: 'Drizzle', emoji:'🌦️' },
+                        53: { label: 'Moderate drizzle', emoji:'🌦️' },
+                        55: { label: 'Dense drizzle', emoji:'🌧️' },
+                        61: { label: 'Rain', emoji:'🌧️' },
+                        63: { label: 'Moderate rain', emoji:'🌧️' },
+                        65: { label: 'Heavy rain', emoji:'⛈️' },
+                        71: { label: 'Snow', emoji:'❄️' },
+                        73: { label: 'Snow showers', emoji:'🌨️' },
+                        75: { label: 'Heavy snow', emoji:'🌨️' },
+                        80: { label: 'Rain showers', emoji:'🌦️' },
+                        81: { label: 'Moderate rain showers', emoji:'🌦️' },
+                        82: { label: 'Violent rain showers', emoji:'⛈️' },
+                        95: { label: 'Thunderstorm', emoji:'⛈️' },
+                        96: { label: 'Thunderstorm with hail', emoji:'🌩️' },
+                        99: { label: 'Thunderstorm with heavy hail', emoji:'🌩️' }
+                    };
+
+                    // Cabeçalho com dia/semana e calendário simples
+                    await this.printTerminal(this.t('terminal.weatherHeader'), 'text-gray-300');
+                    for (let i = 0; i < daily.time.length; i++) {
+                        const date = new Date(daily.time[i]);
+                        const dayName = date.toLocaleDateString(this.lang === 'pt' ? 'pt-PT' : 'en-GB', { weekday: 'short' });
+                        const day = daily.time[i];
+                        const tmin = daily.temperature_2m_min[i];
+                        const tmax = daily.temperature_2m_max[i];
+                        const wind = daily.windspeed_10m_max[i];
+                        const code = daily.weathercode[i];
+                        const info = codeMap[code] || { label: 'Unknown', emoji: '❓' };
+                        await this.printTerminal(`${day}  ${dayName.padEnd(8)} ${info.emoji} ${String(tmin).padStart(3)}°C/${String(tmax).padEnd(4)}°C   ${String(wind).padStart(3)} km/h   ${info.label}`, 'text-gray-300');
+                    }
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.weatherError'), 'text-red-400');
+                }
+            }
+
+            async cmdQuote() {
+                try {
+                    await this.printTerminal(this.t('terminal.quoteFetch'), 'text-gray-300');
+                    const res = await fetch('https://api.quotable.io/random');
+                    const data = await res.json();
+                    const quote = data.content;
+                    const author = data.author;
+                    await this.printTerminal(`"${quote}"\n— ${author}`, 'text-blue-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.quoteError'), 'text-red-400');
+                }
+            }
+
+            async cmdJoke() {
+                try {
+                    await this.printTerminal(this.t('terminal.jokeFetch'), 'text-gray-300');
+                    const res = await fetch('https://icanhazdadjoke.com/', { headers: { 'Accept': 'text/plain' } });
+                    const joke = await res.text();
+                    await this.printTerminal(joke, 'text-blue-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.jokeError'), 'text-red-400');
+                }
+            }
+
+            async cmdFact() {
+                try {
+                    await this.printTerminal(this.t('terminal.factFetch'), 'text-gray-300');
+                    const res = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
+                    const data = await res.json();
+                    const fact = data.text;
+                    await this.printTerminal(fact, 'text-blue-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.factError'), 'text-red-400');
+                }
+            }
+
+            async cmdCat() {
+                try {
+                    await this.printTerminal(this.t('terminal.catFetch'), 'text-gray-300');
+                    const res = await fetch('https://api.thecatapi.com/v1/images/search');
+                    const data = await res.json();
+                    const url = data[0].url;
+                    await this.printTerminal(`🐱 Random cat image: ${url}`, 'text-blue-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.catError'), 'text-red-400');
+                }
+            }
+
+            async cmdDog() {
+                try {
+                    await this.printTerminal(this.t('terminal.dogFetch'), 'text-gray-300');
+                    const res = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const data = await res.json();
+                    const url = data.message;
+                    await this.printTerminal(`🐶 Random dog image: ${url}`, 'text-blue-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.dogError'), 'text-red-400');
+                }
+            }
+
+            async cmdTip(category) {
+                const tips = DATA.tips[this.lang];
+                let selectedTips;
+                let label;
+                if (category === 'random') {
+                    selectedTips = [...tips.dev, ...tips.design, ...tips.photo];
+                    label = this.t('terminal.tipRandom');
+                } else {
+                    selectedTips = tips[category];
+                    if (category === 'dev') label = this.t('terminal.tipDev');
+                    else if (category === 'design') label = this.t('terminal.tipDesign');
+                    else if (category === 'photo') label = this.t('terminal.tipPhoto');
+                }
+                if (!selectedTips || !selectedTips.length) {
+                    await this.printTerminal(this.t('terminal.tipNoTips'), 'text-red-400');
+                    return;
+                }
+                const randomTip = selectedTips[Math.floor(Math.random() * selectedTips.length)];
+                await this.printTerminal(`${label}\n${randomTip}`, 'text-blue-400');
+            }
+
+            async cmdPing(url) {
+                try {
+                    await this.printTerminal(`${this.t('terminal.pingTesting')} ${url}...`, 'text-gray-300');
+                    const start = Date.now();
+                    const res = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
+                    const end = Date.now();
+                    const time = end - start;
+                    await this.printTerminal(`${this.t('terminal.pingSuccess')} ${time}ms`, 'text-green-400');
+                } catch (e) {
+                    await this.printTerminal(this.t('terminal.pingError'), 'text-red-400');
+                }
+            }
+
             helpText() {
-                const base = [
+                const entries = this.t('terminal.helpCommands');
+                if (Array.isArray(entries) && entries.length) {
+                    return this.t('terminal.helpHeader') + '\n\n  ' + entries.join('\n  ');
+                }
+                const fallback = [
                     'help, ?, ls — esta lista',
                     'clear, cls — limpar ecrã',
                     'about — perfil',
@@ -1076,7 +1538,7 @@
                     'chat | talk — abrir chat (ou /chat, /talk)',
                     '/ — lista filtrada ao escrever após /'
                 ];
-                return this.t('terminal.helpHeader') + '\n\n  ' + base.join('\n  ');
+                return this.t('terminal.helpHeader') + '\n\n  ' + fallback.join('\n  ');
             }
 
             async processCommand(raw) {
@@ -1107,11 +1569,92 @@
                     return;
                 }
                 if (first === '/about' || first === 'about') {
-                    await this.printTerminal(DATA.translations[this.lang].about.text1 + '\n\n' + DATA.translations[this.lang].about.text2, 'text-gray-300');
+                    await this.printTerminal(DATA.translations[this.lang].about.text1 + '\n\n' + DATA.translations[this.lang].about.text2 + '\n\n' + this.t('terminal.aboutDetails'), 'text-gray-300');
                     return;
                 }
                 if (first === '/skills' || first === 'skills') {
-                    await this.printTerminal('Full-Stack · Laravel · Vue · Python · FFmpeg · APIs · Data automation', 'text-gray-300');
+                    await this.printTerminal(this.t('terminal.skillsInfo'), 'text-gray-300');
+                    return;
+                }
+                if (first === '/socials' || first === 'socials') {
+                    await this.printTerminal(this.t('terminal.socialsInfo'), 'text-gray-300');
+                    return;
+                }
+                if (first === '/weather' || first === 'weather') {
+                    const arg = raw.replace(/^\/weather\s*/i, '').trim();
+                    let location = '';
+                    const locationMatch = arg.match(/--location=([\w\s\-]+)/i);
+                    if (locationMatch) location = locationMatch[1].trim();
+                    else if (arg) location = arg.trim();
+                    else location = localStorage.getItem('edos_weather_location') || '';
+                    if (!location) {
+                        await this.printTerminal(this.t('terminal.weatherUsage'), 'text-yellow-500');
+                        return;
+                    }
+                    localStorage.setItem('edos_weather_location', location);
+                    await this.cmdWeather(location);
+                    return;
+                }
+                if (first === '/quote' || first === 'quote') {
+                    await this.cmdQuote();
+                    return;
+                }
+                if (first === '/joke' || first === 'joke') {
+                    await this.cmdJoke();
+                    return;
+                }
+                if (first === '/fact' || first === 'fact') {
+                    await this.cmdFact();
+                    return;
+                }
+                if (first === '/cat' || first === 'cat') {
+                    await this.cmdCat();
+                    return;
+                }
+                if (first === '/dog' || first === 'dog') {
+                    await this.cmdDog();
+                    return;
+                }
+                if (first === '/echo' || first === 'echo') {
+                    const arg = raw.replace(/^\/echo\s*/i, '').trim();
+                    if (!arg) {
+                        await this.printTerminal(this.t('terminal.echoUsage'), 'text-yellow-500');
+                        return;
+                    }
+                    await this.printTerminal(arg, 'text-gray-300');
+                    return;
+                }
+                if (first === '/date' || first === 'date') {
+                    const now = new Date();
+                    const loc = this.lang === 'pt' ? 'pt-PT' : 'en-GB';
+                    const dateStr = now.toLocaleString(loc, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                    await this.printTerminal(this.t('terminal.dateInfo') + '\n' + dateStr, 'text-blue-400');
+                    return;
+                }
+                if (first === '/tip-dev' || first === 'tip-dev') {
+                    await this.cmdTip('dev');
+                    return;
+                }
+                if (first === '/tip-design' || first === 'tip-design') {
+                    await this.cmdTip('design');
+                    return;
+                }
+                if (first === '/tip-photo' || first === 'tip-photo') {
+                    await this.cmdTip('photo');
+                    return;
+                }
+                if (first === '/tip-random' || first === 'tip-random') {
+                    await this.cmdTip('random');
+                    return;
+                }
+                if (first === '/ping' || first === 'ping') {
+                    const arg = raw.replace(/^\/ping\s*/i, '').trim();
+                    const url = arg || 'https://www.google.com';
+                    await this.cmdPing(url);
+                    return;
+                }
+                if (first === '/code' || first === 'code') {
+                    await this.printTerminal(this.t('terminal.codeHintIntro') + '\n' + this.t('terminal.codeHintMethod') + '\n' + this.t('terminal.codeHintExtra'), 'text-gray-300');
                     return;
                 }
                 if (first === '/exp' || first === 'exp') {
@@ -1120,11 +1663,11 @@
                     return;
                 }
                 if (first === 'whoami') {
-                    await this.printTerminal('guest (EdOS shell)', 'text-gray-300');
+                    await this.printTerminal(this.t('terminal.whoamiInfo'), 'text-gray-300');
                     return;
                 }
                 if (first === 'version') {
-                    await this.printTerminal('EdOS Kernel 6.2.0-v7+ (browser shell)', 'text-gray-300');
+                    await this.printTerminal(this.t('terminal.versionInfo'), 'text-gray-300');
                     return;
                 }
                 if (first === 'exit') {
@@ -1291,6 +1834,8 @@
                         if (next === this.lang) return;
                         await this.syncChatToLang(next);
                         this.lang = next;
+                        localStorage.setItem('edos_lang', this.lang);
+                        localStorage.setItem('edos_lang_change', Date.now());
                         document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('bg-blue-600', 'text-white'));
                         b.classList.add('bg-blue-600', 'text-white');
                         this.updateUI();
@@ -1330,10 +1875,20 @@
                         this.highlightSuggest(-1);
                         return;
                     }
-                    if (e.key === 'Tab' && open) {
-                        e.preventDefault();
-                        this.applyActiveSuggest();
-                        return;
+                    if (e.key === 'Tab') {
+                        if (open) {
+                            e.preventDefault();
+                            this.applyActiveSuggest();
+                            return;
+                        }
+                        const current = termInput.value.trim().toLowerCase();
+                        const match = SLASH_COMMANDS.find(s => s.cmd.toLowerCase() === current || s.cmd.toLowerCase().startsWith(current));
+                        if (match) {
+                            e.preventDefault();
+                            termInput.value = match.cmd + ' ';
+                            this.showTermSuggest(termInput.value);
+                            return;
+                        }
                     }
 
                     if (e.key === 'Enter') {
